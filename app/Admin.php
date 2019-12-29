@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class Admin extends Authenticatable
 {
     use Notifiable;
-
+    protected $primaryKey ='id_admin';
     protected $guard = 'admin';
 
     /**
@@ -38,4 +38,12 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function formations(){
+        return $this->hasMany(Formation::class, 'id_admin');
+    }
+
+    public function sessions(){
+        return$this->hasMany(Session::class,'id_admin');
+    }
 }

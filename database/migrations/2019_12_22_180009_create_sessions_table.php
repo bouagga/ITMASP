@@ -14,7 +14,18 @@ class CreateSessionsTable extends Migration
     public function up()
     {
         Schema::create('sessions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_session');
+            $table->date('date_lancement');
+            $table->date('date_debut_p');
+            $table->date('date_fin_p');
+            $table->string('etat');
+            $table->integer('pourcentage_p');
+            $table->float('prix_p');
+
+            $table->unsignedBigInteger('id_admin');
+            $table->foreign('id_admin')->references('id_admin')->on('admins');
+            $table->unsignedBigInteger('id_formation');
+            $table->foreign('id_formation')->references('id_formation')->on('formations');
             $table->timestamps();
         });
     }

@@ -14,7 +14,24 @@ class CreateFormationsTable extends Migration
     public function up()
     {
         Schema::create('formations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_formation');
+            $table->string('code');
+            $table->string('Intitule');
+            $table->string('duree');
+            $table->string('objectif');
+            $table->string('prerequis');
+            $table->string('program');
+            $table->string('payment');
+            $table->float('prix');
+
+            $table->unsignedBigInteger('id_admin');
+            $table->foreign('id_admin')->references('id_admin')->on('admins');
+
+
+            $table->unsignedBigInteger('id_category');
+            $table->foreign('id_category')->references('id_category')->on('categories');
+
+
             $table->timestamps();
         });
     }
