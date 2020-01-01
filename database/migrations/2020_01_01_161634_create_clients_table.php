@@ -24,6 +24,10 @@ class CreateClientsTable extends Migration
             $table->string('lieu_naissance');
             $table->integer('clienttable_id');
             $table->string('clienttable_type');
+            $table->unsignedBigInteger('id_formation');
+            $table->foreign('id_formation')->references('id_formation')->on("formations");
+            $table->unsignedBigInteger('id_preinscription');
+            $table->foreign('id_preinscription')->references('id_preinscription')->on("preinscriptions");
             $table->timestamps();
         });
     }

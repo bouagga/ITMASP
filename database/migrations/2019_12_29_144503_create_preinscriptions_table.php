@@ -14,7 +14,7 @@ class CreatePreinscriptionsTable extends Migration
     public function up()
     {
         Schema::create('preinscriptions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_preinscription');
             $table->timestamps();
         });
     }

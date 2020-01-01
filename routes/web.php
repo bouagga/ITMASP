@@ -28,3 +28,6 @@ Route::prefix('admin')->group(function() {
 });
 
 
+Route::resource('/admin/formation','Admin\FormationController',['as'=>'admin']);
+
+

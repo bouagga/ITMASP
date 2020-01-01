@@ -40,4 +40,11 @@ class User extends Authenticatable
     public function formation(){
         return $this->hasOne(Formation::class,'id_user');
     }
+    public function client(){
+        return $this->hasOne(Client::class,'id_user');
+    }
+
+    public function preinscription(){
+        return$this->hasOne(Preinscription::class,'id_user');
+    }
 }

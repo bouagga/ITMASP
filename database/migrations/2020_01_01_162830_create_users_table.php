@@ -19,6 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+//            $table->unsignedBigInteger('id_formation')->default('0');
+//            $table->foreign('id_formation')->references('id_formation')->on('formations');
+//            $table->unsignedBigInteger('id_client')->unsigned();
+//            $table->foreign('id_client')->references('id_client')->on('clients');
+//            $table->unsignedBigInteger('id_preinscription');
+//            $table->foreign('id_preinscription')->references('id_preinscription')->on('preinscriptions');
             $table->rememberToken();
             $table->timestamps();
         });

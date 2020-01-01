@@ -22,4 +22,13 @@ class Formation extends Model
     public function user(){
         return $this->belongsTo(User::class,'id_formation');
     }
+
+    public function client(){
+        return $this->belongsTo(Client::class,'id_formation');
+    }
+
+    public function preinscription(){
+        return $this->hasOne(Preinscription::class,'id_formation');
+    }
+
 }
