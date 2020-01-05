@@ -27,8 +27,7 @@ class CreateFormationsTable extends Migration
             $table->foreign('id_admin')->references('id_admin')->on('admins');
             $table->unsignedBigInteger('id_category');
             $table->foreign('id_category')->references('id_category')->on('categories');
-            $table->unsignedBigInteger('id_preinscription');
-            $table->foreign('id_preinscription')->references('id_preinscription')->on('preinscriptions');
+
 
 
 

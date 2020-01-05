@@ -2,28 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7167bf6c-c347-48cf-9791-1c56b36a5d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_153942_create_formations_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_161634_create_clients_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_163251_create_sessions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/formation/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ITMASP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ITMASP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_02_161223_create_department_formation_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/formation/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/formation/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/formation/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Department.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Formation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Formation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FormationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Preinscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Preinscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_162830_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_22_175050_create_formations_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_22_180009_create_sessions_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_29_114646_create_department_formation_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_29_125911_create_clients_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_29_141701_create_particuliers_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_29_142224_create_entreprises_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_29_144503_create_preinscriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_29_144503_create_preinscriptions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_01_153942_create_formations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_153942_create_formations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/formation/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formation/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +205,11 @@
       <workItem from="1577824980898" duration="497000" />
       <workItem from="1577825493802" duration="5557000" />
       <workItem from="1577887571117" duration="9330000" />
-      <workItem from="1577915415244" duration="970000" />
+      <workItem from="1577915415244" duration="1606000" />
+      <workItem from="1577980871454" duration="8235000" />
+      <workItem from="1578037664632" duration="8208000" />
+      <workItem from="1578082673755" duration="10128000" />
+      <workItem from="1578159712790" duration="18266000" />
     </task>
     <servers />
   </component>
@@ -236,13 +233,25 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2006" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577914795595">
+    <state x="1918" y="180" key="#Updates" timestamp="1577984186986">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state x="2006" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577914795595" />
+    <state x="1918" y="180" key="#Updates/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577984186986" />
+    <state x="2006" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577984188706">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2006" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577984188706" />
+    <state x="1906" y="256" key="IDE.errors.dialog" timestamp="1578232528572">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1906" y="256" key="IDE.errors.dialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1578232528572" />
     <state x="1827" y="163" key="SettingsEditor" timestamp="1577825718265">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="1827" y="163" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577825718265" />
+    <state width="560" height="446" key="SwitcherDM" timestamp="1578232804755">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="560" height="446" key="SwitcherDM/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1578232804755" />
   </component>
 </project>

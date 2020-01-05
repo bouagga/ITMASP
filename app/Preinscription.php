@@ -13,7 +13,7 @@ protected $primaryKey='id_preinscription';
     }
 
     public function formation(){
-        return $this->belongsTo(Formation::class,'id_preinscription');
+        return $this->belongsTo(Formation::class,'id_formation','id_preinscription');
     }
 
     public function client(){

@@ -9,6 +9,6 @@ class Category extends Model
     protected $primaryKey ='id_category';
 
     public function formations(){
-        return $this->hasMany(Formation::class,'id_category');
+        return $this->hasMany(Formation::class,'id_formation','id_category');
     }
 }
