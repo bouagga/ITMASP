@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Formation;
+use App\Creneau;
 use App\Http\Controllers\Controller;
-use App\Session;
-use Carbon\Carbon;
-use DateInterval;
-use DateTime;
 use Illuminate\Http\Request;
 
-
-class SessionController extends Controller
+class CreneauController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +15,7 @@ class SessionController extends Controller
      */
     public function index()
     {
-        //
+        ;
     }
 
     /**
@@ -30,9 +25,7 @@ class SessionController extends Controller
      */
     public function create()
     {
-
-        $formations= Formation::all();
-        return view('admin.session.create')->with('formations',$formations);
+        return view('admin.creneau.create');
     }
 
     /**
@@ -43,34 +36,27 @@ class SessionController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Session  $session
+     * @param  \App\Creneau  $creneau
      * @return \Illuminate\Http\Response
      */
-    public function show(Session $session)
+    public function show(Creneau $creneau)
     {
-//        $Date1 = '2020-01-12';
-//        $date = new DateTime($Date1);
-//        $date->add(new DateInterval('P7D')); // P1D means a period of 1 day
-//        $Date2 = $date->format('Y-m-d');
-//        $timestamp = strtotime($Date2);
-//        $day = date('l', $timestamp);
-//        dd($day);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Session  $session
+     * @param  \App\Creneau  $creneau
      * @return \Illuminate\Http\Response
      */
-    public function edit(Session $session)
+    public function edit(Creneau $creneau)
     {
         //
     }
@@ -79,10 +65,10 @@ class SessionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Session  $session
+     * @param  \App\Creneau  $creneau
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Session $session)
+    public function update(Request $request, Creneau $creneau)
     {
         //
     }
@@ -90,10 +76,10 @@ class SessionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Session  $session
+     * @param  \App\Creneau  $creneau
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Session $session)
+    public function destroy(Creneau $creneau)
     {
         //
     }

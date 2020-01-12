@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Auth;
 
 class FormationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +26,10 @@ class FormationController extends Controller
     public function index()
     {
         $formation  =  Formation::all();
-            return view('admin.formation.index')->with('formations',$formation);
+   $cat = Category::all();
+
+            return view('admin.formation.index')->with('formations',$formation)
+                ->with('cat',$cat);
     }
 
     /**
@@ -46,7 +54,7 @@ class FormationController extends Controller
      */
     public function store(Request $request,Formation $formation)
     {
-
+//dd($request->all());
         $formation->code=$request->code;
         $formation->Intitule=$request->Intitule;
         $formation->duree=$request->duree;
@@ -56,15 +64,16 @@ class FormationController extends Controller
         $formation->payment=$request->payment;
         $formation->prix=$request->prix;
         $formation->id_admin=Auth::guard('admin')->id();
-
         $formation->id_category=$request->category;
-        $formation->save();
-
+        $formation->id_department=$request->department;
         $cat = Category::find($request->category);
-        $cat->formations()->save($formation);
         $dep = Department::find($request->department);
-        $dep->formations()->attach($formation);
-        return redirect('admin/formation/create');
+        $adm =  Admin::find(Auth::guard('admin')->id());
+        $formation->category()->associate($cat);
+        $formation->department()->associate($dep);
+        $formation->admin()->associate($adm);
+        $formation->save();
+        return redirect('admin/formation');
 
 
 
@@ -103,7 +112,6 @@ class FormationController extends Controller
      */
     public function update(Request $request, Formation $formation)
     {
-
         $formation->code=$request->code;
         $formation->Intitule=$request->Intitule;
         $formation->duree=$request->duree;
@@ -113,14 +121,32 @@ class FormationController extends Controller
         $formation->payment=$request->payment;
         $formation->prix=$request->prix;
         $formation->id_admin=Auth::guard('admin')->id();
-
         $formation->id_category=$request->category;
-        $formation->save();
-
+        $formation->id_department=$request->department;
         $cat = Category::find($request->category);
-        $cat->formations()->save($formation);
         $dep = Department::find($request->department);
-        $dep->formations()->attach($formation);
+        $adm =  Admin::find(Auth::guard('admin')->id());
+        $formation->category()->associate($cat);
+        $formation->department()->associate($dep);
+        $formation->admin()->associate($adm);
+        $formation->save();
+//        $formation->code=$request->code;
+//        $formation->Intitule=$request->Intitule;
+//        $formation->duree=$request->duree;
+//        $formation->objectif=$request->objectif;
+//        $formation->prerequis=$request->prerequis;
+//        $formation->program=$request->program;
+//        $formation->payment=$request->payment;
+//        $formation->prix=$request->prix;
+//        $formation->id_admin=Auth::guard('admin')->id();
+//
+//        $formation->id_category=$request->category;
+//        $formation->save();
+//
+//        $cat = Category::find($request->category);
+//        $cat->formations()->save($formation);
+//        $dep = Department::find($request->department);
+//        $dep->formations()->attach($formation);
         return redirect('admin/formation');
     }
 

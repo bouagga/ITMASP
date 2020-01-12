@@ -40,10 +40,12 @@ class Admin extends Authenticatable
     ];
 
     public function formations(){
-        return $this->hasMany(Formation::class, 'id_formation','id_admin');
+        return $this->hasMany(Formation::class,'id_admin');
     }
 
     public function sessions(){
-        return$this->hasMany(Session::class,'id_admin','id_session');
+        return$this->hasMany(Session::class,'id_admin');
     }
+
+
 }

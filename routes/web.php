@@ -29,5 +29,7 @@ Route::prefix('admin')->group(function() {
 
 
 Route::resource('/admin/formation','Admin\FormationController',['as'=>'admin']);
+Route::resource('/admin/creneau','Admin\CreneauController',['as'=>'admin']);
+Route::resource('/admin/session','Admin\SessionController',['as'=>'admin']);
 
 

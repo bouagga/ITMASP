@@ -62,7 +62,7 @@
                             <div class="form-group">
                                 <label for="inputStatus">Department</label>
                                 <select class="form-control custom-select" name="department" >
-                                    @foreach($formation->departments()->get() as $d )
+                                    @foreach($formation->department()->get() as $d )
                                         <option selected disabled value="{{$d->id_department}}">{{$d->nom}}</option>
                                     @endforeach
                                     @foreach($deps as $d)

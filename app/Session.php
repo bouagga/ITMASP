@@ -9,9 +9,12 @@ class Session extends Model
     protected $primaryKey = 'id_session';
 
     public function admin(){
-        return $this->belongsTo(Session::class,'id_admin','id_session');
+        return $this->belongsTo(Session::class,'id_admin');
     }
     public function formation(){
-        return $this->belongsTo(Formation::class,'id_formation','id_session');
+        return $this->belongsTo(Formation::class,'id_formation');
+    }
+    public function creneau(){
+        return $this->hasOne(Creneau::class,'id_session');
     }
 }

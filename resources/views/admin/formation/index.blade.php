@@ -5,7 +5,7 @@
         <div class="col-lg-2 col-6">
             <!-- small card -->
             <div class="small-box bg-info">
-                <div class="inner" style="background-color: #e55039">
+                <div class="inner" style="background-color: #5ce56d">
                     <h3>15</h3>
 
                     <p>informatique</p>
@@ -101,6 +101,7 @@
                 <th>Départment</th>
                 <th>Intitulé</th>
                 <th>Prix</th>
+                <th>user</th>
                 <th>Modifier</th>
                 <th>Archiver</th>
             </tr>
@@ -112,11 +113,14 @@
                 @foreach($f->category()->get() as $c)
                 <td>{{$c->designation}}</td>
                 @endforeach
-                @foreach($f->departments()->get() as $d)
+                @foreach($f->department()->get() as $d)
                 <td>{{$d->nom}}</td>
                 @endforeach
                 <td>{{$f->Intitule}}</td>
-                <td>{{$f->prix}} DA</td>
+                <td>{{$f->prix}}.00 DA</td>
+                @foreach($f->admin()->get() as $d)
+                    <td>{{$d->name}}</td>
+                @endforeach
                 <td>
                     <a href="{{route('admin.formation.show',$f->id_formation)}}">
                     <i class="fas fa-edit" style="margin-left: 40%;"></i>

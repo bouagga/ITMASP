@@ -30,7 +30,7 @@
                                 @endforeach
                             <hr>
                             <strong><i class="fas fa-th-list"></i> Domaine  </strong>
-                                @foreach($formation->departments()->get() as $d)
+                                @foreach($formation->department()->get() as $d)
                             <p class="text-muted">  {{$d->nom}} </p>
                                 @endforeach
                             <hr>

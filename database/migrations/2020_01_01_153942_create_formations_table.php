@@ -17,16 +17,18 @@ class CreateFormationsTable extends Migration
             $table->bigIncrements('id_formation');
             $table->string('code');
             $table->string('Intitule');
-            $table->string('duree');
-            $table->string('objectif');
-            $table->string('prerequis');
-            $table->string('program');
-            $table->string('payment');
-            $table->float('prix');
+            $table->text('duree');
+            $table->text('objectif');
+            $table->text('prerequis');
+            $table->text('program');
+            $table->text('payment');
+            $table->integer('prix');
             $table->unsignedBigInteger('id_admin');
             $table->foreign('id_admin')->references('id_admin')->on('admins');
             $table->unsignedBigInteger('id_category');
             $table->foreign('id_category')->references('id_category')->on('categories');
+            $table->unsignedBigInteger('id_department');
+            $table->foreign('id_department')->references('id_department')->on('departments');
 
 
 

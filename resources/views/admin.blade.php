@@ -8,7 +8,7 @@
                 <div class="panel-heading">ADMIN Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in as <strong>ADMIN</strong>
+                    You are logged in as admin <strong><em>{{$ad}}</em></strong>
                 </div>
             </div>
         </div>

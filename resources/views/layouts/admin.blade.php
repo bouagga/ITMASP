@@ -57,7 +57,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{asset('plugins/ekko-lightbox/ekko-lightbox.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<style>
+    .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#2ecc71;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        box-shadow: 2px 2px 3px #999;
+    }
+    .float2{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:109px;
+        right:40px;
+        background-color: #e74c3c;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        box-shadow: 2px 2px 3px #999;
+    }
 
+    .my-float{
+        margin-top:9px;
+    }
+    .my-float2{
+        margin-top:9px;
+    }
+</style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -184,7 +216,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link" style="color: black">
+                                <a href="{{route('admin.session.create')}}" class="nav-link" style="color: black">
                                     <i class="fas fa-calendar-alt"></i>
                                     <p>Créer Sessions</p>
                                 </a>
@@ -206,7 +238,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link" style="color: black">
+                                <a href="{{route('admin.creneau.create')}}" class="nav-link" style="color: black">
                                     <i class="fas fa-stopwatch"></i>
                                     <p>Créer Créneau</p>
                                 </a>
@@ -1602,9 +1634,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
             timePicker: true,
             timePickerIncrement: 30,
             locale: {
-                format: 'MM/DD/YYYY hh:mm A'
+                format: 'hh:mm A'
             }
         })
+        $('#reservationtime').daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            timePickerIncrement: 1,
+            timePickerSeconds: true,
+            locale: {
+                format: 'HH:mm:ss'
+            }
+        }).on('show.daterangepicker', function (ev, picker) {
+            picker.container.find(".calendar-table").hide();
+        });
         //Date range as a button
         $('#daterange-btn').daterangepicker(
             {
@@ -1626,6 +1669,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         //Timepicker
         $('#timepicker').datetimepicker({
+            format: 'LT'
+        })
+    $('#timepicker2').datetimepicker({
             format: 'LT'
         })
 
@@ -1750,6 +1796,92 @@ scratch. This page gets rid of all links and provides the needed markup only.
             }
         })
     })
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postURL = "<?php echo url('addmore'); ?>";
+        var i = 0;
+        var b = 0;
+        var co=1;
+        $('#add1').click(function () {
+            i++;
+            co++;
+            $('#dynamic_field').append('<tr id="row' + i + '" class="dynamic-added"><td><div class="form-group">\n' +
+                '                                <label>jour</label>\n' +
+                '                                <select class="form-control select2" style="width: 100%;">\n' +
+                '                                    <option selected="selected">Dimanche</option>\n' +
+                '                                    <option>Lundi</option>\n' +
+                '                                    <option>Mardi</option>\n' +
+                '                                    <option>Mercredi</option>\n' +
+                '                                    <option>Jeudi</option>\n' +
+                '                                    <option>Vendredi</option>\n' +
+                '                                    <option>Samedi</option>\n' +
+                '                                </select>\n' +
+                '                            </div>\n' +
+                '                                            <div class="form-group">\n' +
+                '                                                <label for="inputName">debut</label>\n' +
+                '                                                <input type="time" id="Intitule" name="Intitule" class="form-control">\n' +
+                '                                            </div>\n' +
+                '                                            <div class="form-group">\n' +
+                '                                                <label for="inputName">fin</label>\n' +
+                '                                                <input type="time" id="Intitule" name="Intitule" class="form-control">\n' +
+                '                                            </div></td></tr>');
+            $('#dynamic_field2').append('<option id="op'+co+'" value="' +co+ '">' + co + '</option>');
+        });
+        $('#add2').click(function () {
+            i++;
+            co++;
+            $('#dynamic_field1').append('<tr id="row' + i + '" class="dynamic-added"><td><input type="text" name="choice[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">X</button></td></tr>');
+            $('#dynamic_field22').append('<option id="op'+co+'" value="' +co+ '">' + co + '</option>');
+        });
+        $('#add').click(function () {
+            b++;
+            $('#dynamic_field3').append('<tr id="row' + b + '" class="dynamic-added"><td style="float: left"><div  ><div class="input-group"><span class="input-group-addon"><input type="checkbox" name="is_correct[]" value="1"><input type="hidden" name="is_correct[]" value="0"></span><input type="text" name="choice[]" class="form-control" style="width: 500px"></div><!-- /input-group --></div></td><td style="float: left"><button type="button" name="remove" id="' + b + '" class="btn btn-danger btn_remove">X</button></td></tr>');
+        });
+        $(document).on('click', '.btn_remove', function () {
+            var button_id = $(this).attr("id");
+            var op_id=$(this).attr("op")
+            $('#row' + i + '').remove();
+            i--;
+            $('#op'+co+'' ) .remove();
+            co--;
+        });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('#submit').click(function () {
+            $.ajax({
+                url: postURL,
+                method: "POST",
+                data: $('#add_name').serialize(),
+                type: 'json',
+                success: function (data) {
+                    if (data.error) {
+                        printErrorMsg(data.error);
+                    } else {
+                        i = 1;
+                        !
+                            $('.dynamic-added').remove();
+                        $('#add_name')[0].reset();
+                        $(".print-success-msg").find("ul").html('');
+                        $(".print-success-msg").css('display', 'block');
+                        $(".print-error-msg").css('display', 'none');
+                        $(".print-success-msg").find("ul").append('<li>Record Inserted Successfully.</li>');
+                    }
+                }
+            });
+        });
+        function printErrorMsg(msg) {
+            $(".print-error-msg").find("ul").html('');
+            $(".print-error-msg").css('display', 'block');
+            $(".print-success-msg").css('display', 'none');
+            $.each(msg, function (key, value) {
+                $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
+            });
+        }
+    });
 </script>
 </body>
 </html>
