@@ -16,8 +16,10 @@ class CreateCreneausTable extends Migration
         Schema::create('creneaus', function (Blueprint $table) {
             $table->bigIncrements('id_creneaus');
             $table->string('jour');
-            $table->time('debut');
-            $table->time('fin');
+            $table->string('debut');
+            $table->string('fin');
+            $table->unsignedBigInteger('id_session');
+            $table->foreign('id_session')->references('id_session')->on('sessions');
             $table->timestamps();
         });
     }

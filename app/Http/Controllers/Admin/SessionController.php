@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Creneau;
 use App\Formation;
 use App\Http\Controllers\Controller;
 use App\Session;
@@ -9,6 +10,7 @@ use Carbon\Carbon;
 use DateInterval;
 use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class SessionController extends Controller
@@ -20,7 +22,9 @@ class SessionController extends Controller
      */
     public function index()
     {
-        //
+        $sessions=Session::all();
+        return view('admin.session.index')->with('sessions',$sessions);
+
     }
 
     /**
@@ -35,15 +39,91 @@ class SessionController extends Controller
         return view('admin.session.create')->with('formations',$formations);
     }
 
+    public function addMorePost(Request $request)
+    {
+        $rules = [];
+        foreach ($request->input('jour') as $key => $value) {
+            $rules["jour.{$key}"] = 'required';
+        }
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->passes()) {
+            foreach ($request->input('jour') as $key => $value) {
+                MCChoice::create(['jour' => $value]);
+            }
+            return response()->json(['success' => 'done']);
+        }
+        return response()->json(['error' => $validator->errors()->all()]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Session $session)
     {
-        dd($request->all());
+        $d=$request->date_lancement;
+        $d= new DateTime($d);
+////        dd($dd);
+        $session->date_lancement=$d;
+        $dpd=$request->date_debut_p;
+        $dpd= new DateTime($dpd);
+        $session->date_debut_p=$dpd;
+        $dpf=$request->date_fin_p;
+        $dpf= new DateTime($dpf);
+        $session->date_fin_p=$dpf;
+        $session->etat='on hold ';
+        $session->pourcentage_p=$request->pourcentage_p;
+        $session->id_formation=$request->formation;
+        $f=Formation::find($request->formation);
+        $session->prix_p=($f->prix)-(($f->prix)*($request->pourcentage_p)/100);
+        $session->id_admin=Auth::guard('admin')->id();
+//        dd($request->jour);
+        $session->save();
+//
+//        $creneau->jour=$request->jour[0];
+//        $creneau->debut=$request->debut[0];
+//        $creneau->fin=$request->fin[0];
+//        $creneau->id_session=$session->id_session;
+//        $creneau->save();
+//dd($creneau);
+//
+//
+//        $creneau->jour=$request->jour[1];
+//        $creneau->debut=$request->debut[1];
+//        $creneau->fin=$request->fin[1];
+//        $creneau->id_session=$session->id_session;
+//        $creneau->save();
+
+        for ($i=0 ; $i<(count($request->jour)) ; $i++){
+            $creneau=new  Creneau();
+            $creneau->jour=$request->jour[$i];
+            $creneau->debut=$request->debut[$i];
+            $creneau->fin=$request->fin[$i];
+            $creneau->id_session=$session->id_session;
+            $creneau->save();
+
+            $creneau->session()->associate($session);
+
+        }
+//        for ($i=0 ; $i<(count($request->jour)) ; $i++){
+//            echo $request->jour[$i];
+//
+//        }
+        $co =0 ;
+//        dd($request->jour);
+//        foreach ($request->jour as $j ){
+//            $cc= new Creneau();
+//            $cc->jour=$request->jour[$co];
+//            $cc->debut=$request->debut[$co];
+//            $cc->fin=$request->fin[$co];
+//            $cc->id_session=$session->id_session;
+//            $cc->save();
+//
+//            $cc->session()->associate($session);
+//        }
+        return redirect('admin/session');
 
     }
 

@@ -210,7 +210,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active" style="color: black">
+                                <a href="{{route('admin.session.index')}}" class="nav-link active" style="color: black">
                                     <i class="fas fa-calendar-alt"></i>
                                     <p>Liste des Sessions</p>
                                 </a>
@@ -289,26 +289,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                     </li>
                     <li class="nav-item has-treeview menu-open">
-                        <a href="#" class="nav-link active" style="background-color: #fd7e14 ; color: black">
-                            <i class="fas fa-users"></i>
-                            <p>
-                                Comptes
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link active" style="color: black">
-                                    <i class="fas fa-users"></i>
-                                    <p>Liste des Comptes</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" style="color: black">
-                                    <i class="fas fa-user"></i>
-                                    <p>Créer Compte</p>
-                                </a>
-                        </ul>
+                    <a href="#" class="nav-link active" style="background-color: #fd7e14 ; color: black">
+                        <i class="fas fa-users"></i>
+                        <p>
+                            Comptes
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" style="color: black">
+                                <i class="fas fa-users"></i>
+                                <p>Liste des Comptes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" style="color: black">
+                                <i class="fas fa-user"></i>
+                                <p>Créer Compte</p>
+                            </a>
+                    </ul>
                     </li>
                 </ul>
             </nav>
@@ -1621,9 +1621,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         })
 
         //Datemask dd/mm/yyyy
-        $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+        $('#datemask').inputmask('dd-mm-yyyy', { 'placeholder': 'dd-mm-yyyy' })
         //Datemask2 mm/dd/yyyy
-        $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+        $('#datemask2').inputmask('dd-mm-yyyy', { 'placeholder': 'dd-mm-yyyy' })
         //Money Euro
         $('[data-mask]').inputmask()
 
@@ -1808,7 +1808,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             co++;
             $('#dynamic_field').append('<tr id="row' + i + '" class="dynamic-added"><td><div class="form-group">\n' +
                 '                                <label>jour</label>\n' +
-                '                                <select class="form-control select2" style="width: 100%;">\n' +
+                '                                <select class="form-control select2" style="width: 100%;" name="jour[]">\n' +
                 '                                    <option selected="selected">Dimanche</option>\n' +
                 '                                    <option>Lundi</option>\n' +
                 '                                    <option>Mardi</option>\n' +
@@ -1820,13 +1820,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 '                            </div>\n' +
                 '                                            <div class="form-group">\n' +
                 '                                                <label for="inputName">debut</label>\n' +
-                '                                                <input type="time" id="Intitule" name="Intitule" class="form-control">\n' +
+                '                                                <input type="time" id="debut' + i + '" name="debut[]" class="form-control">\n' +
                 '                                            </div>\n' +
                 '                                            <div class="form-group">\n' +
                 '                                                <label for="inputName">fin</label>\n' +
-                '                                                <input type="time" id="Intitule" name="Intitule" class="form-control">\n' +
-                '                                            </div></td></tr>');
+                '                                                <input type="time" id="fin' + i + '" name="fin[]" class="form-control">\n' +
+                '                                            </div></td></tr><input type="hidden" name="row' + i + '" value="">');
             $('#dynamic_field2').append('<option id="op'+co+'" value="' +co+ '">' + co + '</option>');
+
+            window.alert(i);
+
         });
         $('#add2').click(function () {
             i++;

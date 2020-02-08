@@ -15,6 +15,6 @@ class Session extends Model
         return $this->belongsTo(Formation::class,'id_formation');
     }
     public function creneau(){
-        return $this->hasOne(Creneau::class,'id_session');
+        return $this->hasMany(Creneau::class,'id_session');
     }
 }

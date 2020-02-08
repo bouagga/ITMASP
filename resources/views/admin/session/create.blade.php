@@ -32,7 +32,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="date_lancement" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                    <input type="text" class="form-control" name="date_lancement" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -52,24 +52,24 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Date fin</label>
-
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control"  name="date_debut_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
-                                </div>
-                                <!-- /.input group -->
-                            </div>
-                            <div class="form-group">
                                 <label>Date debut</label>
 
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="date_fin_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                    <input type="text" class="form-control"  name="date_debut_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <div class="form-group">
+                                <label>Date fin</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="date_fin_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -105,7 +105,7 @@
                                     <tr id="row0">
                                         <td><div class="form-group">
                                                 <label>jour</label>
-                                                <select class="form-control select2" style="width: 100%;" name="jour">
+                                                <select class="form-control select2" style="width: 100%;" name="jour[]">
                                                     <option selected="selected" value="sunday">Dimanche</option>
                                                     <option value="monday">Lundi</option>
                                                     <option value="Tuesday">Mardi</option>
@@ -117,17 +117,20 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputName">debut</label>
-                                                <input type="time" id="debut" name="debut" class="form-control">
+                                                <input type="time" id="debut[]" name="debut[]" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputName">fin</label>
-                                                <input type="time" id="fin" name="fin" class="form-control">
+                                                <input type="time" id="fin[]" name="fin[]" class="form-control">
                                             </div>
+
                                         </td>
-                                    </tr>
+                                    </tr><input type="hidden" name="row" value="">
                                 </table>
                             </div>
                         </div>
+                        <p id="ii">  </p>
+                        <input type="hidden" name="ii"  value=""  id="ii" >
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
