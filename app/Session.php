@@ -17,4 +17,7 @@ class Session extends Model
     public function creneau(){
         return $this->hasMany(Creneau::class,'id_session');
     }
+    public function preinscriptios(){
+        return $this->hasMany(Preinscription::class,'id_session');
+    }
 }

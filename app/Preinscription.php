@@ -12,8 +12,8 @@ protected $primaryKey='id_preinscription';
         return $this->belongsTo(User::class,'id_preinscription');
     }
 
-    public function formation(){
-        return $this->belongsTo(Formation::class,'id_formation','id_preinscription');
+    public function session(){
+        return $this->belongsTo(Formation::class,'id_session','id_preinscription');
     }
 
     public function client(){

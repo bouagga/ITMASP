@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Formation;
 use App\Http\Controllers\Controller;
 use App\Preinscription;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class PreinscriptionController extends Controller
      */
     public function create()
     {
-        //
+        $formations=Formation::all();
+        return view('admin.inscription.create')->with('formations',$formations);
     }
 
     /**

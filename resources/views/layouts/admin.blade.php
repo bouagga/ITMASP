@@ -224,23 +224,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                     <li class="nav-item has-treeview menu-open">
                         <a href="#" class="nav-link active" style="background-color: #fd7e14  ; color: black">
-                            <i class="fas fa-stopwatch"></i>
+                            <i class="fas fa-prescription-bottle"></i>
                             <p>
-                                Créneaux
+                                Pré-Inscription
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="#" class="nav-link active" style="color: black">
-                                    <i class="fas fa-stopwatch"></i>
-                                    <p>Liste des Créneaux</p>
+                                    <i class="fas fa-prescription-bottle"></i>
+                                    <p>Liste des Pré-Inscriptions</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('admin.creneau.create')}}" class="nav-link" style="color: black">
-                                    <i class="fas fa-stopwatch"></i>
-                                    <p>Créer Créneau</p>
+                                <a href="{{route('admin.inscription.create')}}" class="nav-link" style="color: black">
+                                    <i class="fas fa-prescription-bottle"></i>
+                                    <p>Créer Pré-Inscription</p>
                                 </a>
                         </ul>
                     </li>

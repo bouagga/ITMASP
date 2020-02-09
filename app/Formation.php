@@ -30,8 +30,6 @@ class Formation extends Model
         return $this->belongsTo(Client::class,'id_formation');
     }
 
-    public function preinscriptions(){
-        return $this->hasMany(Preinscription::class,'id_preinscription','id_formation');
-    }
+
 
 }
