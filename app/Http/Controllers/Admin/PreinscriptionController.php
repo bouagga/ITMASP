@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Formation;
 use App\Http\Controllers\Controller;
 use App\Preinscription;
+use App\Session;
 use Illuminate\Http\Request;
 
 class PreinscriptionController extends Controller
@@ -26,10 +27,16 @@ class PreinscriptionController extends Controller
      */
     public function create()
     {
-        $formations=Formation::all();
+        $formations=Formation::all()->pluck('Intitule', 'id_formation');
         return view('admin.inscription.create')->with('formations',$formations);
     }
 
+
+    public function getsessions($id){
+        $sessions = Session::where('id_formation',$id)->pluck('date_lancement','id_session');
+        return json_encode($sessions);
+
+    }
     /**
      * Store a newly created resource in storage.
      *

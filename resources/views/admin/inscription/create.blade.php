@@ -18,20 +18,18 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputStatus">Formation</label>
-                                <select class="form-control custom-select" name="formation">
+                                <select class="form-control custom-select" name="formation" id="formation">
                                     <option selected disabled>Select one</option>
-                                    @foreach($formations as $f)
-                                        <option value="{{$f->id_formation}}">{{$f->Intitule}}</option>
+                                    @foreach($formations as $key => $value )
+                                        <option value="{{$key}}">{{$value}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="inputStatus">Session</label>
-                                <select class="form-control custom-select" name="formation">
+                                <select class="form-control custom-select" name="session" id="session">
                                     <option selected disabled>Select one</option>
-                                    @foreach($formations as $f)
-                                        <option value="{{$f->id_formation}}">{{$f->Intitule}}</option>
-                                    @endforeach
+
                                 </select>
                             </div>
                             <div class="form-group">
@@ -61,9 +59,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                         <!-- /.card-body -->
                     </div>
@@ -170,10 +165,7 @@
                     </div>
                     <!-- /.card -->
                 </div>
-
             </div>
-
-
             <div class="row">
                 <div class="col-12">
                     <a href="#" class="btn btn-secondary">Cancel</a>
@@ -187,4 +179,36 @@
             <i class="fa fa-times my-float2"></i>
         </button>
     </section>
+
+    <button class="btn btn-danger"> test </button>
+    <script> src="{{asset('js/jQuery.js')}}"</script>
+    <script>
+        $(document).ready(function () {
+        $('select[name="formation"]').on('change',function () {
+
+        var id_formation = $(this).val();
+
+        if(id_formation){
+            $.ajax({
+                url: '/getgetsessions/'+id_formation,
+                type:'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    $('select[name="session"]').empty();
+                    $.each(data,function (key,value) {
+                        $('select[name="session"]')
+                        .append('<option value="'+key+'">'+value+'</option>');
+
+                    });
+
+                }
+            });
+        }else {
+            $('select[name="session"]').empty();
+        }
+        });
+        });
+    </script>
+
 @endsection
