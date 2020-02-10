@@ -32,7 +32,7 @@ Route::resource('/admin/formation','Admin\FormationController',['as'=>'admin']);
 Route::resource('/admin/creneau','Admin\CreneauController',['as'=>'admin']);
 Route::resource('/admin/session','Admin\SessionController',['as'=>'admin']);
 Route::resource('/admin/inscription','Admin\PreinscriptionController',['as'=>'admin']);
-Route::get('/admin/inscription/getsessions{id}','Admin\PreinscriptionController@getsessions',['as'=>'admin']);
+Route::get('/admin/inscription/getsessions/{id}','Admin\PreinscriptionController@getsessions',['as'=>'admin']);
 //Route::get('/admin/inscription/getsessions{id}','Admin\PreinscriptionController',['as'=>'admin']);
 //Route::get('/teacher/groups/{group}/schedule','Teacher\GroupsController@schedule',['as'=>'teacher'])->name('teacher.groups.schedule');
 

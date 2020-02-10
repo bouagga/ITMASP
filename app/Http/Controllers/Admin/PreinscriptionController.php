@@ -28,12 +28,14 @@ class PreinscriptionController extends Controller
     public function create()
     {
         $formations=Formation::all()->pluck('Intitule', 'id_formation');
+//        $sessions = Session::where('id_formation',1)->pluck('date_lancement','id_session');
+//        dd(json_encode($sessions));
         return view('admin.inscription.create')->with('formations',$formations);
     }
 
 
     public function getsessions($id){
-        $sessions = Session::where('id_formation',$id)->pluck('date_lancement','id_session');
+        $sessions = Session::where('id_formation',1)->pluck('date_lancement','id_session');
         return json_encode($sessions);
 
     }
