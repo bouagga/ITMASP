@@ -101,7 +101,6 @@
                 <th>Départment</th>
                 <th>Intitulé</th>
                 <th>Prix</th>
-                <th>user</th>
                 <th>Modifier</th>
                 <th>Archiver</th>
             </tr>
@@ -118,9 +117,6 @@
                 @endforeach
                 <td>{{$f->Intitule}}</td>
                 <td>{{$f->prix}}.00 DA</td>
-                @foreach($f->admin()->get() as $d)
-                    <td>{{$d->name}}</td>
-                @endforeach
                 <td>
                     <a href="{{route('admin.formation.show',$f->id_formation)}}">
                     <i class="fas fa-edit" style="margin-left: 40%;"></i>

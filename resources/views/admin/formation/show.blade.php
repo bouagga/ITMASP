@@ -25,20 +25,20 @@
                             <hr>
 
                             <strong><i class="fas fa-layer-group"></i> Catégorie </strong>
-                                @foreach($formation->category()->get() as $c)
-                            <p class="text-muted">  {{$c->designation}} </p>
-                                @endforeach
+                            @foreach($formation->category()->get() as $c)
+                                <p class="text-muted">  {{$c->designation}} </p>
+                            @endforeach
                             <hr>
-                            <strong><i class="fas fa-th-list"></i> Domaine  </strong>
-                                @foreach($formation->department()->get() as $d)
-                            <p class="text-muted">  {{$d->nom}} </p>
-                                @endforeach
+                            <strong><i class="fas fa-th-list"></i> Domaine </strong>
+                            @foreach($formation->department()->get() as $d)
+                                <p class="text-muted">  {{$d->nom}} </p>
+                            @endforeach
                             <hr>
 
                             <strong><i class="fas fa-book"></i> Intitulé </strong>
 
                             <p class="text-muted">
-                             {{$formation->Intitule}}
+                                {{$formation->Intitule}}
                             </p>
 
                             <hr>
@@ -48,7 +48,7 @@
                             <p class="text-muted">{{$formation->duree}}</p>
                             <hr>
 
-                            <strong><i class="fas fa-coins"></i>  Prix original </strong>
+                            <strong><i class="fas fa-coins"></i> Prix original </strong>
 
                             <p class="text-muted">{{$formation->prix}}.00 DA</p>
                         </div>
@@ -61,8 +61,10 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Information</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Sessions</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Information</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Sessions</a>
+                                </li>
 
                             </ul>
                         </div><!-- /.card-header -->
@@ -70,7 +72,7 @@
                             <div class="tab-content">
                                 <div class="active tab-pane" id="activity">
                                     <!-- Post -->
-                                    <strong><i class="fas fa-bullseye"></i> Objectif  </strong>
+                                    <strong><i class="fas fa-bullseye"></i> Objectif </strong>
 
                                     <p class="text-muted">
                                         {{$formation->objectif}}
@@ -100,103 +102,76 @@
                                     </p>
                                     <hr>
                                     <a href="{{route('admin.formation.edit',$formation->id_formation)}}">
-                                    <input type="submit" value="Create new Porject" class="btn btn-success float-right">
+                                        <input type="submit" value="Create new Porject"
+                                               class="btn btn-success float-right">
                                     </a>
                                 </div>
                                 <!-- /.tab-pane -->
+
                                 <div class="tab-pane" id="timeline">
                                     <!-- The timeline -->
+                                    @foreach($formation->sessions()->get() as $se)
                                     <div class="timeline timeline-inverse">
                                         <!-- timeline time label -->
                                         <div class="time-label">
-                        <span class="bg-danger">
-                          10 Feb. 2014
-                        </span>
+                                            <span class="bg-danger">
+                                            {{$se->date_lancement}}
+                                            </span>
                                         </div>
                                         <!-- /.timeline-label -->
                                         <!-- timeline item -->
                                         <div>
-                                            <i class="fas fa-envelope bg-primary"></i>
-
+                                            <i class="far fa-calendar-alt bg-success"></i>
                                             <div class="timeline-item">
-                                                <span class="time"><i class="far fa-clock"></i> 12:05</span>
 
-                                                <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+                                                <h3 class="timeline-header border-0"><a href="#">Date debut promotion :</a>
+                                                    {{$se->date_debut_p}}
 
-                                                <div class="timeline-body">
-                                                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                                                    weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                                                    jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                                                    quora plaxo ideeli hulu weebly balihoo...
-                                                </div>
-                                                <div class="timeline-footer">
-                                                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                                </div>
+                                                </h3>
                                             </div>
                                         </div>
-                                        <!-- END timeline item -->
-                                        <!-- timeline item -->
                                         <div>
-                                            <i class="fas fa-user bg-info"></i>
+                                            <i class="far fa-calendar-alt bg-danger"></i>
+                                            <div class="timeline-item">
+
+                                                <h3 class="timeline-header border-0"><a href="#">Date debut promotion :</a>
+                                                    {{$se->date_fin_p}}
+                                                </h3>
+                                            </div>
+                                        </div>
+
+                                        <div>
+
+                                            <i class="fas fa-percent bg-primary"></i>
 
                                             <div class="timeline-item">
-                                                <span class="time"><i class="far fa-clock"></i> 5 mins ago</span>
-
-                                                <h3 class="timeline-header border-0"><a href="#">Sarah Young</a> accepted your friend request
+                                                <h3 class="timeline-header"><a href="#">Reduction</a>
+                                                    {{$se->pourcentage_p}} %
                                                 </h3>
                                             </div>
                                         </div>
                                         <!-- END timeline item -->
                                         <!-- timeline item -->
+                                        <!-- END timeline item -->
+                                        <!-- timeline item -->
                                         <div>
-                                            <i class="fas fa-comments bg-warning"></i>
+                                            <i class="far fa-clock bg-warning"></i>
 
                                             <div class="timeline-item">
-                                                <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
 
-                                                <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+                                                @foreach($se->creneau()->get() as $cr)
 
-                                                <div class="timeline-body">
-                                                    Take me to your leader!
-                                                    Switzerland is small and neutral!
-                                                    We are more like Germany, ambitious and misunderstood!
-                                                </div>
-                                                <div class="timeline-footer">
-                                                    <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
-                                                </div>
+                                                <h3 class="timeline-header"><a href="#">{{$cr->jour}}</a>
+                                                 {{$cr->debut}}-{{$cr->fin}}
+                                                </h3>
+                                                @endforeach
                                             </div>
                                         </div>
                                         <!-- END timeline item -->
                                         <!-- timeline time label -->
-                                        <div class="time-label">
-                        <span class="bg-success">
-                          3 Jan. 2014
-                        </span>
-                                        </div>
-                                        <!-- /.timeline-label -->
-                                        <!-- timeline item -->
-                                        <div>
-                                            <i class="fas fa-camera bg-purple"></i>
 
-                                            <div class="timeline-item">
-                                                <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
-
-                                                <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                                                <div class="timeline-body">
-                                                    <img src="http://placehold.it/150x100" alt="...">
-                                                    <img src="http://placehold.it/150x100" alt="...">
-                                                    <img src="http://placehold.it/150x100" alt="...">
-                                                    <img src="http://placehold.it/150x100" alt="...">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- END timeline item -->
-                                        <div>
-                                            <i class="far fa-clock bg-gray"></i>
-                                        </div>
                                     </div>
+                                        @endforeach
                                 </div>
                                 <!-- /.tab-pane -->
 

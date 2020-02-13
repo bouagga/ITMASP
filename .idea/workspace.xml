@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7167bf6c-c347-48cf-9791-1c56b36a5d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_12_202512_create_clients_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_12_203125_create_preinscriptions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_12_203155_create_jours_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/session/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/session/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Formation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Formation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PreinscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PreinscriptionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jour.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jour.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Preinscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Preinscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_29_144503_create_preinscriptions_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_01_161634_create_clients_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_01_163251_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_163251_create_sessions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_13_094432_create_jours_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/formation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formation/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/formation/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formation/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/inscription/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inscription/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/session/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,6 +238,9 @@
       <workItem from="1581275418504" duration="7830000" />
       <workItem from="1581359717674" duration="6917000" />
       <workItem from="1581495392701" duration="31873000" />
+      <workItem from="1581554489495" duration="435000" />
+      <workItem from="1581579001359" duration="11776000" />
+      <workItem from="1581606431772" duration="557000" />
     </task>
     <servers />
   </component>
@@ -286,21 +282,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581243129320" />
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1581270521441">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1306" height="154" key="GridCell.Tab.0.bottom" timestamp="1581554934693">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1306" height="154" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581554934693" />
     <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581270521441" />
-    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1581270521441">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1306" height="154" key="GridCell.Tab.0.center" timestamp="1581554934693">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1306" height="154" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581554934693" />
     <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581270521441" />
-    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1581270521441">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1306" height="154" key="GridCell.Tab.0.left" timestamp="1581554934693">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1306" height="154" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581554934693" />
     <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581270521441" />
-    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1581270521441">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1306" height="154" key="GridCell.Tab.0.right" timestamp="1581554934693">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1306" height="154" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581554934693" />
     <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581270521441" />
     <state x="384" y="179" key="IDE.errors.dialog" timestamp="1578919115541">
       <screen x="0" y="0" width="1366" height="728" />
@@ -341,5 +341,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578409817609" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/layouts/admin.blade.php</url>
+          <line>1887</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

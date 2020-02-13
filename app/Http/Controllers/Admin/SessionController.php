@@ -142,6 +142,7 @@ class SessionController extends Controller
 //        $timestamp = strtotime($Date2);
 //        $day = date('l', $timestamp);
 //        dd($day);
+        return view('admin.session.show')->with('session',$session);
     }
 
     /**
@@ -152,7 +153,7 @@ class SessionController extends Controller
      */
     public function edit(Session $session)
     {
-        //
+
     }
 
     /**

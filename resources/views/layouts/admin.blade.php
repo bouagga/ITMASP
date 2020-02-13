@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>AdminLTE 3 | Starter</title>
+    <title>ITM ASP</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1825,7 +1825,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 '                                            <div class="form-group">\n' +
                 '                                                <label for="inputName">fin</label>\n' +
                 '                                                <input type="time" id="fin' + i + '" name="fin[]" class="form-control">\n' +
-                '                                            </div></td></tr><input type="hidden" name="row' + i + '" value="">');
+                '                                            </div></td></tr><input type="hidden" name="row' + i + '" value ="">');
             $('#dynamic_field2').append('<option id="op'+co+'" value="' +co+ '">' + co + '</option>');
 
             window.alert(i);
