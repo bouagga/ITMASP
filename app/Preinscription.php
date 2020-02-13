@@ -19,4 +19,11 @@ protected $primaryKey='id_preinscription';
     public function client(){
         return $this->belongsTo(Client::class,'id_preinscription');
     }
+    public function jours(){
+        return $this->hasMany(Jour::class,'id_preinscription');
+    }
+    public function admin(){
+        return $this->belongsTo(Admin::class,'id_admin');
+    }
+
 }

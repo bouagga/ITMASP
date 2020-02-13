@@ -14,13 +14,12 @@ class Client extends Model
     public function user(){
         return $this->belongsTo(User::class,'id_client');
     }
-
-    public function formation(){
-        return $this->hasOne(Formation::class,'id_client');
+    public function admin(){
+        return $this->belongsTo(Admin::class,'id_admin');
     }
 
-    public function preinscription(){
-        return $this->hasOne(Preinscription::class,'id_client');
+    public function preinscriptios(){
+        return $this->hasMany(Preinscription::class,'id_client');
     }
 
 

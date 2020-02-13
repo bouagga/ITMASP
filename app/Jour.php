@@ -9,7 +9,7 @@ class Jour extends Model
     protected $primaryKey = 'id_jour';
 
 
-    public function creneau(){
-        return $this->belongsTo(Creneau::class);
+    public function inscription(){
+        return $this->belongsTo(Preinscription::class,'id_preinscription','id_jour');
     }
 }

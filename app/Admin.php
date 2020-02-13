@@ -46,6 +46,11 @@ class Admin extends Authenticatable
     public function sessions(){
         return$this->hasMany(Session::class,'id_admin');
     }
-
+    public function preinscriptios(){
+        return $this->hasMany(Preinscription::class,'id_admin');
+    }
+    public function client(){
+        return $this->hasMany(Client::class,'id_admin');
+    }
 
 }

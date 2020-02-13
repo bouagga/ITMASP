@@ -15,19 +15,17 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->bigIncrements('id_client');
+            $table->string('statut');
             $table->string('nom');
             $table->string('prenom');
-            $table->string('address');
-            $table->string('telephone1');
-            $table->string('telephone2');
+            $table->string('Adresse');
+            $table->integer('fix')->default(null);
+            $table->integer('Mob1');
+            $table->integer('Mob2')->default(null);
             $table->date('date_naissance');
             $table->string('lieu_naissance');
-            $table->integer('clienttable_id');
-            $table->string('clienttable_type');
-            $table->unsignedBigInteger('id_formation');
-            $table->foreign('id_formation')->references('id_formation')->on("formations");
-            $table->unsignedBigInteger('id_preinscription');
-            $table->foreign('id_preinscription')->references('id_preinscription')->on("preinscriptions");
+            $table->unsignedBigInteger('id_admin');
+            $table->foreign('id_admin')->references('id_admin')->on('admins');
             $table->timestamps();
         });
     }

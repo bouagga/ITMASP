@@ -15,6 +15,15 @@ class CreatePreinscriptionsTable extends Migration
     {
         Schema::create('preinscriptions', function (Blueprint $table) {
             $table->bigIncrements('id_preinscription');
+            $table->integer('TarifG');
+            $table->integer('Reduction');
+            $table->integer('TarifF');
+            $table->unsignedBigInteger('id_admin');
+            $table->foreign('id_admin')->references('id_admin')->on('admins');
+            $table->unsignedBigInteger('id_client');
+            $table->foreign('id_client')->references('id_client')->on('clients');
+            $table->unsignedBigInteger('id_session');
+            $table->foreign('id_session')->references('id_session')->on('sessions');
             $table->timestamps();
         });
     }

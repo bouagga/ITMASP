@@ -26,9 +26,7 @@ class Formation extends Model
         return $this->belongsTo(User::class,'id_formation');
     }
 
-    public function client(){
-        return $this->belongsTo(Client::class,'id_formation');
-    }
+
 
 
 

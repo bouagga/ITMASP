@@ -33,6 +33,8 @@ Route::resource('/admin/creneau','Admin\CreneauController',['as'=>'admin']);
 Route::resource('/admin/session','Admin\SessionController',['as'=>'admin']);
 Route::resource('/admin/inscription','Admin\PreinscriptionController',['as'=>'admin']);
 Route::get('/admin/inscription/getsessions/{id}','Admin\PreinscriptionController@getsessions',['as'=>'admin']);
+Route::get('/admin/inscription/getprice/{id}','Admin\PreinscriptionController@getprice',['as'=>'admin']);
+Route::get('/admin/inscription/getPourcentage/{id}','Admin\PreinscriptionController@getPourcentage',['as'=>'admin']);
 //Route::get('/admin/inscription/getsessions{id}','Admin\PreinscriptionController',['as'=>'admin']);
 //Route::get('/teacher/groups/{group}/schedule','Teacher\GroupsController@schedule',['as'=>'teacher'])->name('teacher.groups.schedule');
 

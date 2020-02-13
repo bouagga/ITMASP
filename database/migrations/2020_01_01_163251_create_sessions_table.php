@@ -16,10 +16,10 @@ class CreateSessionsTable extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->bigIncrements('id_session');
             $table->date('date_lancement');
-            $table->date('date_debut_p');
-            $table->date('date_fin_p');
+            $table->date('date_debut_p')->default(null);
+            $table->date('date_fin_p')->default(null);
             $table->string('etat');
-            $table->integer('pourcentage_p');
+            $table->integer('pourcentage_p')->default(0);
             $table->float('prix_p');
 
             $table->unsignedBigInteger('id_admin');

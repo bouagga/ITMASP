@@ -15,8 +15,12 @@ class CreateJoursTable extends Migration
     {
         Schema::create('jours', function (Blueprint $table) {
             $table->bigIncrements('id_jour');
-            $table->unsignedBigInteger('id_creneaus');
-            $table->foreign('id_creneaus')->references('id_creneaus')->on('creneaus');
+            $table->string('jour');
+            $table->boolean('slot1');
+            $table->boolean('slot2');
+            $table->boolean('slot3');
+            $table->unsignedBigInteger('id_preinscription')->nullable();
+            $table->foreign('id_preinscription')->references('id_preinscription')->on('preinscriptions');
 
             $table->timestamps();
         });

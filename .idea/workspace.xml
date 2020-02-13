@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7167bf6c-c347-48cf-9791-1c56b36a5d91" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_12_202512_create_clients_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_12_203125_create_preinscriptions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_12_203155_create_jours_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Formation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Formation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PreinscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PreinscriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jour.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jour.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Preinscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Preinscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_29_144503_create_preinscriptions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_01_161634_create_clients_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_01_163251_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_163251_create_sessions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_13_094432_create_jours_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/inscription/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inscription/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -231,7 +243,8 @@
       <workItem from="1581253404835" duration="378000" />
       <workItem from="1581269688496" duration="824000" />
       <workItem from="1581275418504" duration="7830000" />
-      <workItem from="1581359717674" duration="6683000" />
+      <workItem from="1581359717674" duration="6917000" />
+      <workItem from="1581495392701" duration="31873000" />
     </task>
     <servers />
   </component>
@@ -264,10 +277,11 @@
     </state>
     <state x="2006" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577984188706" />
     <state x="455" y="174" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1581236528227" />
-    <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578904449600">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="580" y="171" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581540818807">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578904449600" />
+    <state x="580" y="171" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581540818807" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1581243129320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -294,11 +308,12 @@
     <state x="384" y="179" key="IDE.errors.dialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1578600902090" />
     <state x="1906" y="256" key="IDE.errors.dialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1578232528572" />
     <state x="384" y="179" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1578919115541" />
-    <state x="328" y="15" key="SettingsEditor" timestamp="1581233010752">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="461" y="21" key="SettingsEditor" timestamp="1581535045525">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1827" y="163" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577825718265" />
     <state x="328" y="15" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581233010752" />
+    <state x="461" y="21" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581535045525" />
     <state width="498" height="398" key="SwitcherDM" timestamp="1578903427290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -308,18 +323,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="438" y="209" key="cloudConfig.PluginsDialog/0.0.1366.728@0.0.1366.728" timestamp="1581232962883" />
-    <state x="438" y="209" key="cloudConfig.SelfSettingsDialog" timestamp="1581232954725">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="616" y="299" key="cloudConfig.SelfSettingsDialog" timestamp="1581535029391">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="438" y="209" key="cloudConfig.SelfSettingsDialog/0.0.1366.728@0.0.1366.728" timestamp="1581232954725" />
+    <state x="616" y="299" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581535029391" />
     <state x="0" y="0" width="627" height="728" key="find.popup" timestamp="1578651705912">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" width="627" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1578651705912" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1581104982606">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="476" y="231" key="run.anything.popup" timestamp="1581550423468">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1581104982606" />
+    <state x="476" y="231" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581550423468" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578409817609">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -58,36 +58,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <style>
-        .float{
-            position:fixed;
-            width:60px;
-            height:60px;
-            bottom:40px;
-            right:40px;
-            background-color:#2ecc71;
-            color:#FFF;
-            border-radius:50px;
-            text-align:center;
-            box-shadow: 2px 2px 3px #999;
-        }
-        .float2{
-            position:fixed;
-            width:60px;
-            height:60px;
-            bottom:109px;
-            right:40px;
-            background-color: #e74c3c;
-            color:#FFF;
-            border-radius:50px;
-            text-align:center;
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #2ecc71;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
             box-shadow: 2px 2px 3px #999;
         }
 
-        .my-float{
-            margin-top:9px;
+        .float2 {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 109px;
+            right: 40px;
+            background-color: #e74c3c;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
         }
-        .my-float2{
-            margin-top:9px;
+
+        .my-float {
+            margin-top: 9px;
+        }
+
+        .my-float2 {
+            margin-top: 9px;
         }
     </style>
 </head>
@@ -106,13 +108,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link"><strong>Foramtions</strong></a>
-            </li><li class="nav-item d-none d-sm-inline-block">
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link"><strong>Sessions</strong></a>
-            </li><li class="nav-item d-none d-sm-inline-block">
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link"><strong>Créneaux</strong></a>
-            </li> </li><li class="nav-item d-none d-sm-inline-block">
+            </li>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link"><strong>Départements</strong></a>
-            </li> </li><li class="nav-item d-none d-sm-inline-block">
+            </li>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link"><strong>Catégories</strong></a>
             </li>
         </ul>
@@ -134,7 +142,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                {{ __('Logout') }} <i class="fas fa-sign-out-alt" ></i></a>
+                {{ __('Logout') }} <i class="fas fa-sign-out-alt"></i></a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
@@ -166,7 +174,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
@@ -188,7 +197,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('admin.formation.index')}}" class="nav-link active" style="color: black">
+                                <a href="{{route('admin.formation.index')}}" class="nav-link active"
+                                   style="color: black">
                                     <i class="fas fa-graduation-cap"></i>
                                     <p>Liste des Formations</p>
                                 </a>
@@ -338,8 +348,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.content-header -->
         <!-- Main content -->
         <section class="content">
-            <form role="form" method="post" action="{{route('admin.session.store')}} ">
+            <form role="form" method="post" action="{{route('admin.inscription.store')}} ">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-secondary">
@@ -347,7 +358,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <h3 class="card-title">Session</h3>
 
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
                                 </div>
                             </div>
@@ -363,7 +375,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <div class="form-group">
                                     <label for="inputStatus">Session</label>
-                                    <select class="form-control custom-select" name="session" id="formation">
+                                    <select class="form-control custom-select" name="id_session" id="formation">
                                         <option selected disabled>Select one</option>
 
                                     </select>
@@ -371,16 +383,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="form-group">
                                     <label for="inputEstimatedBudget">Tarif Globale</label>
                                     <div class="input-group">
-                                        <input id="box1" type="text" oninput="calculate()" />
+                                        <input id="box1" type="text" name="TarifG" oninput="calculate()"/>
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">.00 DA</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEstimatedBudget">Pourcentage</label>
+                                    <label for="inputEstimatedBudget">Reduction</label>
                                     <div class="input-group">
-                                        <input id="box2" type="text" oninput="calculate()" />
+                                        <input id="box2" type="text" name="Reduction" oninput="calculate()"/>
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">%</span>
                                         </div>
@@ -389,7 +401,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="form-group">
                                     <label for="inputEstimatedBudget">Tarif Final</label>
                                     <div class="input-group">
-                                        <input id="result" />
+                                        <input id="result" name="TarifF"/>
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">.00 DA</span>
                                         </div>
@@ -398,105 +410,127 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <!-- /.card-body -->
                         </div>
+
+                        <!-- /.card -->
+                    </div>
+                    <div class="col-md-6">
+
                         <div class="card card-secondary">
                             <div class="card-header" style="background-color: #2980b9;">
                                 <h3 class="card-title">Participant</h3>
 
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="form-group clearfix">
                                     <div class="icheck-primary d-inline">
-                                        <input type="radio" id="radioPrimary1" name="r1" checked>
+                                        <input type="radio" id="radioPrimary1" name="statut" value="Mme" checked>
                                         <label for="radioPrimary1">
-                                            dbdf
+                                            Mme
                                         </label>
                                     </div>
                                     <div class="icheck-primary d-inline">
-                                        <input type="radio" id="radioPrimary2" name="r1">
+                                        <input type="radio" id="radioPrimary2" name="statut" value="Melle">
                                         <label for="radioPrimary2">
-                                            fdhrdhg
+                                            Melle
                                         </label>
                                     </div>
                                     <div class="icheck-primary d-inline">
-                                        <input type="radio" id="radioPrimary3" name="r1" >
+                                        <input type="radio" id="radioPrimary3" name="statut" value="Mr">
                                         <label for="radioPrimary3">
-                                            Primary radio
+                                            Mr
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Date fin</label>
+                                    <div class="input-group">
 
+                                    <label style="margin: 7px">Nom</label>
+                                    <input type="text" class="form-control" name="nom" placeholder="Enter ...">
+                                    <label style="margin: 7px">Prenom</label>
+                                    <input type="text" class="form-control" name="prenom" placeholder="Enter ...">
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label>Deja Inscrit</label>
+
+                                    <div class="icheck-danger d-inline">
+                                        <input type="radio" name="Inscrit" value="1" checked id="radioDanger1">
+                                        <label for="radioDanger1">
+                                            Oui
+                                        </label>
+                                    </div>
+                                    <div class="icheck-danger d-inline">
+                                        <input type="radio" name="Inscrit" value="0" id="radioDanger2">
+                                        <label for="radioDanger2">
+                                            Non
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Date & lieu de naissance</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" name="date_fin_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                        <input type="date" class="form-control" name="date_naissance"
+                                               data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy"
+                                               data-mask>
+                                        <label style="margin: 7px"> a </label>
+                                        <input type="text" id="inputEstimatedBudget" name="lieu_naissance"
+                                               class="form-control">
                                     </div>
-                                    <!-- /.input group -->
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEstimatedBudget">Pourcentage</label>
+                                    <label for="inputName">Adresse</label>
+                                    <input type="text" id="Adresse" name="Adresse" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Telephone Fix</label>
                                     <div class="input-group">
-                                        <input type="number" id="inputEstimatedBudget" name="pourcentage_p" class="form-control">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text">%</span>
+                                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                         </div>
+                                        <input type="tel" id="phone" name="fix" placeholder="1234567890"
+                                               pattern="[0-9]{3}[0-9]{2}[0-9]{3}" >
                                     </div>
+                                    <!-- /.input group -->
+
                                 </div>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card card-primary">
-                            <div class="card-header" style="background-color: #34495e;">
-                                <h3 class="card-title">Creneau</h3>
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <div class="input-group">
 
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                                        <i class="fas fa-minus"></i></button>
+                                        <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i
+                                                                        class="fas fa-phone"></i></span>
+                                        </div>
+                                        <input type="tel" id="phone" name="Mob1"
+                                               placeholder="1234567890"
+                                               pattern="[0-9]{3}[0-9]{2}[0-9]{3}" >
+                                        <label style="margin: 7px"> Mob1 </label>
+
+                                        <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i
+                                                                        class="fas fa-phone"></i></span>
+                                        </div>
+                                        <input type="tel" id="phone" name="Mob2"
+                                               placeholder="1234567890"
+                                               pattern="[0-9]{3}[0-9]{2}[0-9]{3}"   >
+                                        <label style="margin: 7px"> Mob2 </label>
+                                        <!-- /.input group -->
+
+                                    </div>
+
                                 </div>
+
+
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-
-                                    <table class="table table-bordered" id="dynamic_field">
-
-                                        <tr id="row0">
-                                            <td><div class="form-group">
-                                                    <label>jour</label>
-                                                    <select class="form-control select2" style="width: 100%;" name="jour[]">
-                                                        <option selected="selected" value="sunday">Dimanche</option>
-                                                        <option value="monday">Lundi</option>
-                                                        <option value="Tuesday">Mardi</option>
-                                                        <option value="Wednesday">Mercredi</option>
-                                                        <option value="Thursday">Jeudi</option>
-                                                        <option value="Friday">Vendredi</option>
-                                                        <option value="Saturday">Samedi</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputName">debut</label>
-                                                    <input type="time" id="debut[]" name="debut[]" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputName">fin</label>
-                                                    <input type="time" id="fin[]" name="fin[]" class="form-control">
-                                                </div>
-
-                                            </td>
-                                        </tr><input type="hidden" name="row" value="">
-                                    </table>
-                                </div>
-                            </div>
-                            <p id="ii">  </p>
-                            <input type="hidden" name="ii"  value=""  id="ii" >
                             <!-- /.card-body -->
                         </div>
                         <!-- /.card -->
@@ -504,16 +538,277 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <div class="row">
                     <div class="col-12">
+                        <div class="card card-primary">
+                            <div class="card-header" style="background-color: #34495e;">
+                                <h3 class="card-title">Disponibilité</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Vendredi</th>
+                                        <th>Samedi</th>
+                                        <th>Dimanche</th>
+                                        <th>Lundi</th>
+                                        <th>Mardi</th>
+                                        <th>Mercredi</th>
+                                        <th>Jeudi</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <input type="hidden" name="slot[]" value="8h-12h">
+                                    <input type="hidden" name="slot[]" value="12h-17h">
+                                    <input type="hidden" name="slot[]" value="17h-19h">
+                                    <tr>
+                                        <td>8h-12h</td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                        <input type="checkbox" name="Vendredi[]" id="checkboxSuccess9" value="1">
+                                                        <input type="hidden" name="Vendredi[]" value="0" checked >
+                                                    <label for="checkboxSuccess9">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Samedi[]" id="checkboxSuccess8" value="1">
+                                                    <input type="hidden" name="Samedi[]" value="0" checked >
+                                                    <label for="checkboxSuccess8">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Dimanche[] " id="checkboxSuccess3" value="1">
+                                                    <input type="hidden" name="Dimanche[]" value="0" checked >
+                                                    <label for="checkboxSuccess3">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Lundi[]" id="checkboxSuccess4" value="1">
+                                                    <input type="hidden" name="Lundi[]" value="0" checked >
+
+                                                    <label for="checkboxSuccess4">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Mardi[]" id="checkboxSuccess5" value="1">
+                                                    <input type="hidden" name="Mardi[]" value="0" checked >
+                                                    <label for="checkboxSuccess5">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Mercredi[]" id="checkboxSuccess6" value="1">
+                                                    <input type="hidden" name="Mercredi[]" value="0" checked >
+                                                    <label for="checkboxSuccess6">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Jeudi[]" id="checkboxSuccess7" value="1">
+                                                    <input type="hidden" name="Jeudi[]" value="0" checked >
+                                                    <label for="checkboxSuccess7">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>12h-17h</td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Vendredi[]" id="checkboxSuccess10" value="1">
+                                                    <input type="hidden" name="Vendredi[]" value="0" checked >
+
+                                                    <label for="checkboxSuccess10">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Samedi[]" id="checkboxSuccess11" value="1">
+                                                    <input type="hidden" name="Samedi[]" value="0" checked >
+                                                    <label for="checkboxSuccess11">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Dimanche[]" id="checkboxSuccess12" value="1">
+                                                    <input type="hidden" name="Dimanche[]" value="0" checked >
+                                                    <label for="checkboxSuccess12">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Lundi[]" id="checkboxSuccess13" value="1">
+                                                    <input type="hidden" name="Lundi[]" value="0" checked >
+                                                    <label for="checkboxSuccess13">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Mardi[]" id="checkboxSuccess14" value="1">
+                                                    <input type="hidden" name="Mardi[]" value="0" checked >
+                                                    <label for="checkboxSuccess14">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Mercredi[]" id="checkboxSuccess15" value="1">
+                                                    <input type="hidden" name="Mercredi[]" value="0" checked >
+                                                    <label for="checkboxSuccess15">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Jeudi[]" id="checkboxSuccess16" value="1">
+                                                    <input type="hidden" name="Jeudi[]" value="0" checked >
+                                                    <label for="checkboxSuccess16">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>17h-19h</td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Vendredi[]" id="checkboxSuccess17" value="1">
+                                                    <input type="hidden" name="Vendredi[]" value="0" checked     >
+                                                    <label for="checkboxSuccess17">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Samedi[]" id="checkboxSuccess18" value="1">
+                                                    <input type="hidden" name="Samedi[]" value="0" checked>
+                                                    <label for="checkboxSuccess18">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Dimanche[]" id="checkboxSuccess19" value="1">
+                                                    <input type="hidden" name="Dimanche[]" value="0" checked>
+                                                    <label for="checkboxSuccess19">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Lundi[]" id="checkboxSuccess20" value="1">
+                                                    <input type="hidden" name="Lundi[]" value="0" checked>
+                                                    <label for="checkboxSuccess20">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Mardi[]" id="checkboxSuccess21" value="1">
+                                                    <input type="hidden" name="Mardi[]" value="0" checked>
+                                                    <label for="checkboxSuccess21">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Mercredi[]" id="checkboxSuccess22" value="1">
+                                                    <input type="hidden" name="Mercredi[]" value="0" checked>
+                                                    <label for="checkboxSuccess22">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" name="Jeudi[]" id="checkboxSuccess24" value="1">
+                                                    <input type="hidden" name="Jeudi[]" value="0" checked>
+                                                    <label for="checkboxSuccess24">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
                         <a href="#" class="btn btn-secondary">Cancel</a>
-                        <input type="submit" value="Create new formation" class="btn btn-success float-right">
+                        <input type="submit" value="Creé pré-inscription" class="btn btn-success float-right">
                     </div>
                 </div>
             </form>
-            <button class="float" name="add1" id="add1">
-                <i class="fa fa-plus my-float"></i>
-            </button> <button type="button" name="remove" id="0" class="float2 btn_remove">
-                <i class="fa fa-times my-float2"></i>
-            </button>
+
         </section>
 
 
@@ -567,45 +862,107 @@ scratch. This page gets rid of all links and provides the needed markup only.
         var myBox1 = document.getElementById('box1').value;
         var myBox2 = document.getElementById('box2').value;
         var result = document.getElementById('result');
-        var myResult = myBox1-(myBox1 * myBox2/100);
+        var myResult = myBox1 - (myBox1 * myBox2 / 100);
         result.value = myResult;
 
 
     }
 </script>
-<button class="btn btn-danger"> test </button>
-<script src ="{{asset('js/jQuery.js')}}"> </script>
+<button class="btn btn-danger"> test</button>
+<script src="{{asset('js/jQuery.js')}}"></script>
 
 <script>
 
     $(document).ready(function () {
 
-        $('select[name="formation"]').on('change',function () {
-            var  id_formation =$(this).val();
+        $('select[name="formation"]').on('change', function () {
+            var id_formation = $(this).val();
 
-            if (id_formation){
+            if (id_formation) {
                 // console.log('admin/inscription/getsessions/'+id_formation)
                 $.ajax({
-                    url: 'getsessions/'+1,
+                    url: 'getsessions/' + 1,
                     type: 'GET',
-                    dataType:'json',
+                    dataType: 'json',
                     success: function (data) {
                         console.log(data);
-                        $('select[name="session"]').empty();
-                        $.each(data,function (key, value) {
-                            $('select[name="session"]')
-                                .append('<option value ="'+key+'">'+value+'</option>');
+                        $('select[name="id_session"]').empty();
+                        $.each(data, function (key, value) {
+                            $('select[name="id_session"]')
+                                .append('<option selected disabled>Select one</option>' +
+                                    '<option value ="' + key + '">' + value + '</option>');
                         });
                     }
                 });
 
-            }else {
-                $('select[name="session"]').empty();
+            } else {
+                $('select[name="id_session"]').empty();
             }
         });
     });
 
 </script>
+<script>
+
+    $(document).ready(function () {
+
+        $('select[name="formation"]').on('change', function () {
+            var id_formation = $(this).val();
+
+
+            if (id_formation) {
+                // console.log('admin/inscription/getprice/'+id_formation)
+                $.ajax({
+                    url: 'getprice/' + id_formation,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                        document.getElementById("box1").value = data;
+                    }
+                });
+
+                // }else {
+                //     $('select[name="session"]').empty();
+            }
+        });
+    });
+
+</script>
+<script>
+
+    $(document).ready(function () {
+
+        $('select[name="id_session"]').on('change', function () {
+            var id_session = $(this).val();
+
+
+            if (id_session) {
+                // console.log('admin/inscription/getprice/'+id_formation)
+                $.ajax({
+                    url: 'getPourcentage/' + id_session,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                        document.getElementById("box2").value = data;
+                        var myBox1 = document.getElementById('box1').value;
+                        var myBox2 = document.getElementById('box2').value;
+                        var result = document.getElementById('result');
+                        var myResult = myBox1 - (myBox1 * myBox2 / 100);
+                        result.value = myResult;
+
+                    }
+                });
+
+                // }else {
+                //     $('select[name="session"]').empty();
+            }
+        });
+    });
+
+</script>
+
 {{--<script>--}}
 {{--    $(document).ready(function (){--}}
 {{--       var x =   document.getElementById("TarifG");--}}
