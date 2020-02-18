@@ -17,7 +17,7 @@ class CreateFormationsTable extends Migration
             $table->bigIncrements('id_formation');
             $table->string('code');
             $table->string('Intitule');
-            $table->text('duree');
+            $table->integer('duree');
             $table->text('objectif');
             $table->text('prerequis');
             $table->text('program');

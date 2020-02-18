@@ -39,7 +39,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="inputName">Durée</label>
-                            <input type="text" id="duree" name="duree" class="form-control">
+                            <input type="number" id="duree" name="duree" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Modalité de paiement</label>

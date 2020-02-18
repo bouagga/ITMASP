@@ -97,9 +97,9 @@
             <thead>
             <tr>
                 <th>Code</th>
+                <th>Intitulé</th>
                 <th>Catégorie</th>
                 <th>Départment</th>
-                <th>Intitulé</th>
                 <th>Prix</th>
                 <th>Modifier</th>
                 <th>Archiver</th>
@@ -109,13 +109,13 @@
             @foreach($formations as $f )
             <tr>
                 <td>{{$f->code}}</td>
+                <td>{{$f->Intitule}}</td>
                 @foreach($f->category()->get() as $c)
                 <td>{{$c->designation}}</td>
                 @endforeach
                 @foreach($f->department()->get() as $d)
                 <td>{{$d->nom}}</td>
                 @endforeach
-                <td>{{$f->Intitule}}</td>
                 <td>{{$f->prix}}.00 DA</td>
                 <td>
                     <a href="{{route('admin.formation.show',$f->id_formation)}}">

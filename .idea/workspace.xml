@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7167bf6c-c347-48cf-9791-1c56b36a5d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/session/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/session/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_01_153942_create_formations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_153942_create_formations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/formation/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formation/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/formation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formation/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/formation/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formation/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inscription/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inscription/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/session/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/session/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/session/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +237,15 @@
       <workItem from="1581495392701" duration="31873000" />
       <workItem from="1581554489495" duration="435000" />
       <workItem from="1581579001359" duration="11776000" />
-      <workItem from="1581606431772" duration="557000" />
+      <workItem from="1581606431772" duration="927000" />
+      <workItem from="1581751558108" duration="404000" />
+      <workItem from="1581775441373" duration="4298000" />
+      <workItem from="1581838178280" duration="5347000" />
+      <workItem from="1581926880328" duration="997000" />
+      <workItem from="1581929241984" duration="3986000" />
+      <workItem from="1582011034060" duration="1981000" />
+      <workItem from="1582015112244" duration="3687000" />
+      <workItem from="1582035279619" duration="3953000" />
     </task>
     <servers />
   </component>

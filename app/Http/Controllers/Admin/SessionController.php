@@ -135,6 +135,23 @@ class SessionController extends Controller
      */
     public function show(Session $session)
     {
+        $periode=0;
+        foreach ($session->creneau()->get() as $creneau){
+            $time_debut= (int)$creneau->debut;
+            $time_fin=(int)$creneau->fin;
+            $differece=$time_fin-$time_debut;
+            $periode=$periode+$differece;
+        }
+        foreach ($session->formation()->get() as $formation){
+            $duree=$formation->duree;
+        }
+        $nbr_sem=round($duree/$periode);
+        if ($nbr_sem!=1){
+            $date= strtotime($session->date_lancement);
+            $day = date('l', $date);
+        }
+
+
 //        $Date1 = '2020-01-12';
 //        $date = new DateTime($Date1);
 //        $date->add(new DateInterval('P7D')); // P1D means a period of 1 day
@@ -142,7 +159,29 @@ class SessionController extends Controller
 //        $timestamp = strtotime($Date2);
 //        $day = date('l', $timestamp);
 //        dd($day);
-        return view('admin.session.show')->with('session',$session);
+
+       $date= strtotime($session->date_lancement);
+        $day = date('l', $date);
+        $i=1;
+        foreach ($session->creneau()->get() as $cr){
+           $dday= $cr->jour;
+           echo $i;
+           if ($day == $dday){
+//               dd("jhf");
+           }
+            $tr=$cr->debut;
+            $tttttttt= strtotime($cr->debut);
+            $rrr= date("M,d,Y h:i:s A",$tttttttt);
+            $time1= (int)$cr->debut;
+            $time=(int)$cr->fin;
+            $tt=$time-$time1;
+//            $er=$er+$tt;
+            $i++;
+        }
+//        $az= round(9/$er);
+
+        dd($nbr_sem);
+        return view('admin.session.show')->with('session',$session)->with('az',$az)->with('time',$rrr);
     }
 
     /**
