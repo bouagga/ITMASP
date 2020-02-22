@@ -106,8 +106,8 @@
                                         <td><div class="form-group">
                                                 <label>jour</label>
                                                 <select class="form-control select2" style="width: 100%;" name="jour[]">
-                                                    <option selected="selected" value="sunday">Dimanche</option>
-                                                    <option value="monday">Lundi</option>
+                                                    <option selected="selected" value="Sunday">Dimanche</option>
+                                                    <option value="Monday">Lundi</option>
                                                     <option value="Tuesday">Mardi</option>
                                                     <option value="Wednesday">Mercredi</option>
                                                     <option value="Thursday">Jeudi</option>

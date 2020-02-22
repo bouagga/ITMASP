@@ -1,14 +1,20 @@
 @extends('layouts.admin')
 
 @section('content')
+    @foreach($time as $day )
+        <p>{{$day}}</p>
+        @endforeach
 <script>
     // unixTimeZero = Date.parse('12-02-2022');
     // var someDate = new Date();
-    // var numberOfDaysToAdd = 1;
-    // someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
-    var d = new Date("{{$time}}");
-    var n = d.toTimeString();
-    document.write(d);
+
+    @foreach($time as $day)
+    var d = new Date("{{$day}}");
+    var numberOfDaysToAdd = 7;
+    // d.setDate(d.getDate() + numberOfDaysToAdd);
+    var n = d.toDateString();
+    document.write(n);
+
     document.write("                <table class=\"table table-condensed\">\n" +
         "                  <thead>\n" +
         "                    <tr>\n" +
@@ -23,7 +29,7 @@
     for( i = 0 ;  i<{{$az}} ; i++){
         document.write("<tr>\n" +
             "                      <td>"+i+".</td>\n" +
-            "                      <td>Update software</td>\n" +
+            "                      <td>"+n+"</td>\n" +
             "                      <td>\n" +
             "                        <div class=\"progress progress-xs\">\n" +
             "                          <div class=\"progress-bar progress-bar-danger\" style=\"width: 55%\"></div>\n" +
@@ -31,9 +37,13 @@
             "                      </td>\n" +
             "                      <td><span class=\"badge bg-danger\">55%</span></td>\n" +
             "                    </tr>");
-
+        d.setDate(d.getDate() + numberOfDaysToAdd);
+        n = d.toDateString();
     }
     document.write("                  </tbody>\n" +
-        "                </table>");
+        "   " +
+        "             </table>");
+
+    @endforeach
 </script>
 @endsection

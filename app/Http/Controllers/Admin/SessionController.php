@@ -146,9 +146,53 @@ class SessionController extends Controller
             $duree=$formation->duree;
         }
         $nbr_sem=round($duree/$periode);
+        $coo=0;
+        foreach ($session->creneau()->get() as $jj){
+            $arry[] =$jj->jour;
+        }
+//        dd($arry);
+        $date= strtotime($session->date_lancement);
+        $yhn= date('Y-m-d', $date);
+//        dd($yhn);
+
+        $arday[]=date("M,d,Y h:i:s A", $date);
+//        dd($arday);
+        $po= strtotime(date('Y-m-d', strtotime($yhn. ' + 0 days')));
+
+        for ($io=0; $io<6 ;$io++){
+            $in= date('l', $po);
+            echo $in;
+//            echo date("M,d,Y h:i:s A", $po);
+            if (in_array($in,$arry)){
+//                echo "1slam1";
+                $arday[]=date("M,d,Y h:i:s A", $po);
+            }
+            $po= strtotime(date('Y-m-d', strtotime($yhn. ' + 1 days')));
+
+            $yhn= date('Y-m-d', $po);
+        }
+//dd($arday);
+//        $po= strtotime(date('Y-m-d', strtotime($yhn. ' + 2 days')));
+//        dd($po);
+//        echo date('l', $po);
+//      for ($coo=0;$coo<=$arry;$coo++){
+//          echo $coo;
+////          echo $arry->jour;
+////          echo $arry[$coo] ;
+//
+//
+////        dd($yhn);
+//
+////          echo $date;
+////          $date->add(new DateInterval('P1D')); // P1D means a period of 1 day
+////          $day2 = date('l', $date);
+////          echo $day2;
+//      }
         if ($nbr_sem!=1){
             $date= strtotime($session->date_lancement);
             $day = date('l', $date);
+
+
         }
 
 
@@ -160,28 +204,28 @@ class SessionController extends Controller
 //        $day = date('l', $timestamp);
 //        dd($day);
 
-       $date= strtotime($session->date_lancement);
-        $day = date('l', $date);
-        $i=1;
-        foreach ($session->creneau()->get() as $cr){
-           $dday= $cr->jour;
-           echo $i;
-           if ($day == $dday){
-//               dd("jhf");
-           }
-            $tr=$cr->debut;
-            $tttttttt= strtotime($cr->debut);
-            $rrr= date("M,d,Y h:i:s A",$tttttttt);
-            $time1= (int)$cr->debut;
-            $time=(int)$cr->fin;
-            $tt=$time-$time1;
-//            $er=$er+$tt;
-            $i++;
-        }
+//       $date= strtotime($session->date_lancement);
+//        $day = date('l', $date);
+//        $i=1;
+//        foreach ($session->creneau()->get() as $cr){
+//           $dday= $cr->jour;
+//           echo $i;
+//           if ($day == $dday){
+////               dd("jhf");
+//           }
+//            $tr=$cr->debut;
+//            $tttttttt= strtotime($cr->debut);
+//            $rrr= date("M,d,Y h:i:s A",$tttttttt);
+//            $time1= (int)$cr->debut;
+//            $time=(int)$cr->fin;
+//            $tt=$time-$time1;
+////            $er=$er+$tt;
+//            $i++;
+//        }
 //        $az= round(9/$er);
 
-        dd($nbr_sem);
-        return view('admin.session.show')->with('session',$session)->with('az',$az)->with('time',$rrr);
+//        dd($arday);
+        return view('admin.session.show')->with('session',$session)->with('az',$nbr_sem)->with('time',$arday);
     }
 
     /**
