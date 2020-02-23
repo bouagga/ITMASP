@@ -150,18 +150,21 @@ class SessionController extends Controller
         foreach ($session->creneau()->get() as $jj){
             $arry[] =$jj->jour;
         }
+        $nbr_col=round(12/count($arry));
+
 //        dd($arry);
         $date= strtotime($session->date_lancement);
         $yhn= date('Y-m-d', $date);
 //        dd($yhn);
 
-        $arday[]=date("M,d,Y h:i:s A", $date);
+//        $arday[]=date("M,d,Y h:i:s A", $date);
 //        dd($arday);
         $po= strtotime(date('Y-m-d', strtotime($yhn. ' + 0 days')));
 
-        for ($io=0; $io<6 ;$io++){
+        for ($io=0; $io<=6 ;$io++){
+//            echo $yhn." c'est jour : ";
             $in= date('l', $po);
-            echo $in;
+//            echo $in."///";
 //            echo date("M,d,Y h:i:s A", $po);
             if (in_array($in,$arry)){
 //                echo "1slam1";
@@ -196,9 +199,9 @@ class SessionController extends Controller
         }
 
 
-//        $Date1 = '2020-01-12';
+//        $Date1 = '2020-02-23';
 //        $date = new DateTime($Date1);
-//        $date->add(new DateInterval('P7D')); // P1D means a period of 1 day
+//        $date->add(new DateInterval('P6D')); // P1D means a period of 1 day
 //        $Date2 = $date->format('Y-m-d');
 //        $timestamp = strtotime($Date2);
 //        $day = date('l', $timestamp);
@@ -225,7 +228,7 @@ class SessionController extends Controller
 //        $az= round(9/$er);
 
 //        dd($arday);
-        return view('admin.session.show')->with('session',$session)->with('az',$nbr_sem)->with('time',$arday);
+        return view('admin.session.show')->with('session',$session)->with('az',$nbr_sem)->with('time',$arday)->with('col',$nbr_col);
     }
 
     /**

@@ -232,7 +232,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active" style="color: black">
+                                <a href="{{route('admin.inscription.index')}}" class="nav-link active" style="color: black">
                                     <i class="fas fa-prescription-bottle"></i>
                                     <p>Liste des Pré-Inscriptions</p>
                                 </a>

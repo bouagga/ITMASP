@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7167bf6c-c347-48cf-9791-1c56b36a5d91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreneauController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreneauController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartemntController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartemntController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EntreprisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EntreprisController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ParticulierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ParticulierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PreinscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PreinscriptionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/inscription/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inscription/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/session/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/session/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +253,8 @@
       <workItem from="1582015112244" duration="3687000" />
       <workItem from="1582035279619" duration="3953000" />
       <workItem from="1582356659363" duration="936000" />
-      <workItem from="1582359706441" duration="19104000" />
+      <workItem from="1582359706441" duration="19442000" />
+      <workItem from="1582443589633" duration="12421000" />
     </task>
     <servers />
   </component>
@@ -318,10 +328,10 @@
     <state x="1827" y="163" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577825718265" />
     <state x="328" y="15" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581233010752" />
     <state x="461" y="21" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581535045525" />
-    <state width="560" height="446" key="SwitcherDM" timestamp="1582382681761">
+    <state width="560" height="446" key="SwitcherDM" timestamp="1582452287692">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="560" height="446" key="SwitcherDM/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1582382681761" />
+    <state width="560" height="446" key="SwitcherDM/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1582452287692" />
     <state width="498" height="398" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1578903427290" />
     <state x="438" y="209" key="cloudConfig.PluginsDialog" timestamp="1581232962883">
       <screen x="0" y="0" width="1366" height="728" />
