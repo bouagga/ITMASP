@@ -49,8 +49,18 @@ class Admin extends Authenticatable
     public function preinscriptios(){
         return $this->hasMany(Preinscription::class,'id_admin');
     }
+    public function appelsortants(){
+        return $this->hasMany(AppelSortant::class,'id_admin');
+    }
+
     public function client(){
         return $this->hasMany(Client::class,'id_admin');
     }
 
+    public function contrats(){
+        return $this->hasMany(Contrat::class,'id_admin');
+    }
+    public function paiemnets(){
+        return $this->hasMany(Paiement::class,'id_admin');
+    }
 }

@@ -20,4 +20,8 @@ class Session extends Model
     public function preinscriptios(){
         return $this->hasMany(Preinscription::class,'id_session');
     }
+
+    public function contrats(){
+        return $this->hasMany(Contrat::class,'id_session');
+    }
 }

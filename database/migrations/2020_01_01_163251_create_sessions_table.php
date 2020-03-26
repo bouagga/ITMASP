@@ -21,11 +21,10 @@ class CreateSessionsTable extends Migration
             $table->string('etat');
             $table->integer('pourcentage_p')->default(0);
             $table->float('prix_p');
-
             $table->unsignedBigInteger('id_admin');
             $table->foreign('id_admin')->references('id_admin')->on('admins');
             $table->unsignedBigInteger('id_formation');
-            $table->foreign('id_formation')->references('id_formation')->on("formations");
+            $table->foreign('id_formation')->references('id_formation')->on("formations")->onDelete('cascade');
             $table->timestamps();
         });
     }

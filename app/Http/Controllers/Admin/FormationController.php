@@ -42,8 +42,7 @@ class FormationController extends Controller
         $cats= Category::all();
         $deps =  Department::all();
         $admins = Admin::all();
-        return view('admin.formation.create')->with('cats',$cats)->with('deps',$deps)
-            ->with('admins',$admins);
+        return view('admin.formation.create')->with('cats',$cats)->with('deps',$deps)->with('admins',$admins);
     }
 
     /**
@@ -87,6 +86,8 @@ class FormationController extends Controller
      */
     public function show(Formation $formation)
     {
+        echo $formation;
+        dd(count($formation->category()->get()) );
         return view('admin.formation.show')->with('formation',$formation);
     }
 
@@ -158,9 +159,15 @@ class FormationController extends Controller
      */
     public function destroy(Formation $formation)
     {
-        foreach ($formation->departments()->get() as $d){
-            $formation->departments()->detach([$d->id_department]);
-        }
+
+
+            $formation->department()->dissociate();
+
+         $formation->category()->dissociate() ;
+
+             $formation->sessions()->delete();
+
+
         $formation->delete();
         return redirect('admin/formation');
     }

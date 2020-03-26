@@ -115,11 +115,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link"><strong>Créneaux</strong></a>
             </li>
-            </li>
+
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link"><strong>Départements</strong></a>
             </li>
-            </li>
+
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link"><strong>Catégories</strong></a>
             </li>
@@ -302,7 +302,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="nav-link active" style="background-color: #fd7e14 ; color: black">
                             <i class="fas fa-users"></i>
                             <p>
-                                Comptes
+                                Contrats
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -310,13 +310,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="#" class="nav-link active" style="color: black">
                                     <i class="fas fa-users"></i>
-                                    <p>Liste des Comptes</p>
+                                    <p>Liste des Contrats</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link" style="color: black">
+                                <a href="{{route('admin.contrat.create')}}" class="nav-link" style="color: black">
                                     <i class="fas fa-user"></i>
-                                    <p>Créer Compte</p>
+                                    <p>Créer Contrat</p>
                                 </a>
                         </ul>
                     </li>
@@ -489,6 +489,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="form-group">
                                     <label for="inputName">Adresse</label>
                                     <input type="text" id="Adresse" name="Adresse" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">Adresse Email</label>
+                                    <input type="email" id="email" name="email" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Telephone Fix</label>
@@ -868,7 +872,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     }
 </script>
-<button class="btn btn-danger"> test</button>
+
 <script src="{{asset('js/jQuery.js')}}"></script>
 
 <script>
@@ -881,7 +885,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             if (id_formation) {
                 // console.log('admin/inscription/getsessions/'+id_formation)
                 $.ajax({
-                    url: 'getsessions/' + 1,
+                    url: 'getsessions/' + id_formation,
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {

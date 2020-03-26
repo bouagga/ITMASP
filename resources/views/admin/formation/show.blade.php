@@ -102,7 +102,7 @@
                                     </p>
                                     <hr>
                                     <a href="{{route('admin.formation.edit',$formation->id_formation)}}">
-                                        <input type="submit" value="Create new Porject"
+                                        <input type="submit" value="edit formation"
                                                class="btn btn-success float-right">
                                     </a>
                                 </div>
@@ -114,9 +114,9 @@
                                     <div class="timeline timeline-inverse">
                                         <!-- timeline time label -->
                                         <div class="time-label">
-                                            <span class="bg-danger">
+                                            <a href="{{route('admin.session.show',$se->id_session)}}">     <span class="bg-danger">
                                             {{$se->date_lancement}}
-                                            </span>
+                                            </span>   </a>
                                         </div>
                                         <!-- /.timeline-label -->
                                         <!-- timeline item -->
@@ -134,7 +134,7 @@
                                             <i class="far fa-calendar-alt bg-danger"></i>
                                             <div class="timeline-item">
 
-                                                <h3 class="timeline-header border-0"><a href="#">Date debut promotion :</a>
+                                                <h3 class="timeline-header border-0"><a href="#">Date fin promotion :</a>
                                                     {{$se->date_fin_p}}
                                                 </h3>
                                             </div>
@@ -172,6 +172,11 @@
 
                                     </div>
                                         @endforeach
+                                    <a href="{{route('admin.session.create')}}" >
+
+                                        <input type="submit" value="Créer Sessions"
+                                               class="btn btn-success float-right">
+                                    </a>
                                 </div>
                                 <!-- /.tab-pane -->
 

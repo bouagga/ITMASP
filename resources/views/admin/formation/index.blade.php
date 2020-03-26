@@ -110,9 +110,16 @@
             <tr>
                 <td>{{$f->code}}</td>
                 <td>{{$f->Intitule}}</td>
+              @if(count($f->category()->get()) ==0 )
+                    <td>not categoried</td>
+                  @else
                 @foreach($f->category()->get() as $c)
+
+
                 <td>{{$c->designation}}</td>
                 @endforeach
+                                        @endif
+
                 @foreach($f->department()->get() as $d)
                 <td>{{$d->nom}}</td>
                 @endforeach

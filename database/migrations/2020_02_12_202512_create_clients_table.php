@@ -19,6 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('Adresse');
+            $table->string('email');
             $table->integer('fix')->default(null);
             $table->integer('Mob1');
             $table->integer('Mob2')->default(null);

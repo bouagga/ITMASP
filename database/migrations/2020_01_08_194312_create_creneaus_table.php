@@ -19,7 +19,7 @@ class CreateCreneausTable extends Migration
             $table->string('debut');
             $table->string('fin');
             $table->unsignedBigInteger('id_session');
-            $table->foreign('id_session')->references('id_session')->on('sessions');
+            $table->foreign('id_session')->references('id_session')->on('sessions')->onDelete('cascade');;
             $table->timestamps();
         });
     }

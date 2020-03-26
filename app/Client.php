@@ -22,8 +22,12 @@ class Client extends Model
         return $this->hasMany(Preinscription::class,'id_client');
     }
 
+    public function applesortan(){
+        return $this->hasMany(AppelSortant::class,'id_client');
+    }
 
-
-
+    public function contrats(){
+        return $this->hasMany(Contrat::class,'id_client');
+    }
 
 }

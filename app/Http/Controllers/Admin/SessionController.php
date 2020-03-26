@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Creneau;
 use App\Formation;
 use App\Http\Controllers\Controller;
+use App\Preinscription;
 use App\Session;
 use Carbon\Carbon;
 use DateInterval;
@@ -251,7 +252,27 @@ class SessionController extends Controller
      */
     public function update(Request $request, Session $session)
     {
-        //
+//        dd($request->all());
+//        dd(Preinscription::w  here('id_client',2));
+//        $i=0;
+//        foreach ($session->preinscriptios()->get() as $inscr){
+//            $inscr->calle1=$request->calle1[$i];
+//            $inscr->calle2=$request->calle2[$i];
+//            $inscr->calle3=$request->calle3[$i];
+//           $inscr->save();
+//            $i++;
+//
+//        }
+        $sessions=Session::all();
+        return view('admin.session.index')->with('sessions',$sessions);
+//      for ($i=0 ; $i<count($request->id_client);$i++){
+//            $inscr =  );
+//            dd($inscr->calle1);
+//
+//      }
+//        dd(Preinscription::where('id_client',$request->id_client[0]));
+
+
     }
 
     /**

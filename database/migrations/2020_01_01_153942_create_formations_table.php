@@ -25,9 +25,9 @@ class CreateFormationsTable extends Migration
             $table->integer('prix');
             $table->unsignedBigInteger('id_admin');
             $table->foreign('id_admin')->references('id_admin')->on('admins');
-            $table->unsignedBigInteger('id_category');
+            $table->unsignedBigInteger('id_category')->nullable();
             $table->foreign('id_category')->references('id_category')->on('categories');
-            $table->unsignedBigInteger('id_department');
+            $table->unsignedBigInteger('id_department')->nullable();
             $table->foreign('id_department')->references('id_department')->on('departments');
 
 

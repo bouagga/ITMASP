@@ -28,9 +28,16 @@ Route::prefix('admin')->group(function() {
 });
 
 
+Route::resource('/admin/department','Admin\DepartemntController',['as'=>'admin']);
+Route::resource('/admin/category','Admin\CategoryController',['as'=>'admin']);
 Route::resource('/admin/formation','Admin\FormationController',['as'=>'admin']);
 Route::resource('/admin/creneau','Admin\CreneauController',['as'=>'admin']);
+Route::resource('/admin/appel_sortant','Admin\AppelSortantController',['as'=>'admin']);
 Route::resource('/admin/session','Admin\SessionController',['as'=>'admin']);
+Route::resource('/admin/contrat','Admin\ContratController',['as'=>'admin']);
+Route::get('/admin/contrat/getsessions/{id}','Admin\ContratController@getsessions',['as'=>'admin']);
+Route::get('/admin/contrat/getprice/{id}','Admin\ContratController@getprice',['as'=>'admin']);
+Route::get('/admin/contrat/getPourcentage/{id}','Admin\ContratController@getPourcentage',['as'=>'admin']);
 Route::resource('/admin/inscription','Admin\PreinscriptionController',['as'=>'admin']);
 Route::get('/admin/inscription/getsessions/{id}','Admin\PreinscriptionController@getsessions',['as'=>'admin']);
 Route::get('/admin/inscription/getprice/{id}','Admin\PreinscriptionController@getprice',['as'=>'admin']);

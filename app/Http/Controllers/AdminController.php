@@ -31,4 +31,5 @@ class AdminController extends Controller
 
         return view('admin')->with('ad',$a->name);
     }
+
 }

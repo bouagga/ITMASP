@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin;
+use App\AppelSortant;
 use App\Client;
 use App\Formation;
 use App\Http\Controllers\Controller;
@@ -25,7 +26,8 @@ class PreinscriptionController extends Controller
      */
     public function index()
     {
-        return view('admin.inscription.index');
+
+        return view('admin.inscription.index')->with('inscription',Preinscription::all());
     }
 
     /**
@@ -43,7 +45,7 @@ class PreinscriptionController extends Controller
 
 
     public function getsessions($id){
-        $sessions = Session::where('id_formation',1)->pluck('date_lancement','id_session');
+        $sessions = Session::where('id_formation',$id)->pluck('date_lancement','id_session');
         return json_encode($sessions);
 
     }
@@ -67,17 +69,20 @@ class PreinscriptionController extends Controller
     public function store(Request $request,Preinscription $preinscription,Client $client)
     {
 //        dd($request->all());
+        $adm =  Admin::find(Auth::guard('admin')->id());
         $client->statut=$request->statut;
         $client->nom=$request->nom;
         $client->prenom=$request->prenom;
         $client->Adresse=$request->Adresse;
         $client->fix=$request->fix;
+        $client->email=$request->email;
         $client->Mob1=$request->Mob1;
         $client->Mob2=$request->Mob2;
         $client->date_naissance=$request->date_naissance;
         $client->lieu_naissance=$request->lieu_naissance;
         $client->id_admin=Auth::guard('admin')->id();
         $client->save();
+        $client->admin()->associate($adm);
         $preinscription->TarifG=$request->TarifG;
         $preinscription->Reduction=$request->Reduction;
         $preinscription->TarifF=$request->TarifF;
@@ -86,7 +91,6 @@ class PreinscriptionController extends Controller
         $sess =  Session::find($request->id_session);
 //        dd($preinscription->id_session=$sess->id_session);
         $preinscription->id_session=$sess->id_session ;
-        $adm =  Admin::find(Auth::guard('admin')->id());
         $preinscription->save();
         $preinscription->admin()->associate($adm);
         $preinscription->client()->associate($client);
@@ -308,10 +312,20 @@ class PreinscriptionController extends Controller
      * @param  \App\Preinscription  $preinscription
      * @return \Illuminate\Http\Response
      */
-    public function show(Preinscription $preinscription)
+    public function show(Preinscription $inscription)
     {
-        //
+
+        $is= Preinscription::find($inscription->id_preinscription);
+
+//        dd($inscription->appelsortants()->get());
+        foreach ($inscription->appelsortants()->get() as $app){
+       echo $app;
+
+        }
+
+        return view('admin.inscription.show')->with('inscription',$inscription)->with('id',$inscription->id_preinscription)->with('appels',$inscription->appelsortants()->get());
     }
+
 
     /**
      * Show the form for editing the specified resource.

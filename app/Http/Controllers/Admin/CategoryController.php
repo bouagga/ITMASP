@@ -19,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.category.index')->with('category',Category::all());
     }
 
     /**
@@ -29,7 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -38,9 +38,12 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Category $category)
     {
-        //
+        $category->description=$request->description;
+        $category->designation=$request->designation;
+        $category->save();
+        return redirect('admin/category');
     }
 
     /**
@@ -51,7 +54,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('admin.category.show')->with('category',$category)->with('formation',$category->formations()->get());
+
     }
 
     /**
@@ -62,7 +66,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.category.edit')->with('category',$category);
     }
 
     /**
@@ -74,7 +78,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->description=$request->description;
+        $category->designation=$request->designation;
+        $category->save();
+        return redirect('admin/category');
+
     }
 
     /**
@@ -85,6 +93,19 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        foreach ($category->formations()->get() as $formation){
+            $formation->id_category=null;
+            echo $formation;
+            $formation->category()->dissociate() ;
+
+//            $cat = Category::find(4);
+//            $formation->category()->associate($cat);
+            $formation->save();
+
+
+        }
+        $category->delete();
+        return redirect('admin/category');
+
     }
 }

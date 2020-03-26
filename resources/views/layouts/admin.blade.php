@@ -55,6 +55,76 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{asset('')}}plugins/fullcalendar-bootstrap/main.min.css">
     <!-- Ekko Lightbox -->
     <link rel="stylesheet" href="{{asset('plugins/ekko-lightbox/ekko-lightbox.css')}}">
+{{--    <link href="{{asset('//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}" rel="stylesheet">--}}
+{{--    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">--}}
+{{--    <link href="{{asset('css/fontawesome-iconpicker.min.css')}}" rel="stylesheet">--}}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('css/docs.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/pygments-manni.css')}}"/>
+    <link rel="stylesheet" href="{{asset('icon-fonts/elusive-icons-2.0.0/css/elusive-icons.min.css')}}"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+    <link rel="stylesheet" href="{{asset('icon-fonts/map-icons-2.1.0/css/map-icons.min.css')}}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css"/>
+    <link rel="stylesheet" href="{{asset('dist/css/bootstrap-iconpicker.css')}}"/>
+
+    <style type="text/css">
+        .bg-gray {
+            color: #777;
+            background-color: #eee;
+        }
+        #btnGithub, #btnDonate {
+            width: 200px;
+        }
+        #btnGithub span, #btnDonate span {
+            font-style: italic;
+        }
+        #btnStars, #btnForks, #btnReleases, #btnContributors {
+            font-weight: bold;
+        }
+        .tab-content {
+            padding: 12px;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        code {
+            background-color: #f9f2f4;
+            border-radius: 4px;
+            padding: 2px 4px;
+        }
+        code.code-default {
+            color: #ffffff;
+            background-color: #f0ad4e;
+        }
+        code.code-info {
+            color: #ffffff;
+            background-color: #5bc0de;
+        }
+        code.code-options {
+            color: #ffffff;
+            background-color: #9b59b6;
+        }
+        code.code-event {
+            color: #ffffff;
+            background-color: #449d44;
+        }
+        code.code-method {
+            color: #ffffff;
+            background-color: #357ebd;
+        }
+        #console {
+            height: 135px;
+            overflow-y: scroll;
+            color: white;
+            background-color: black;
+        }
+    </style>
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 <style>
@@ -102,18 +172,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link"> <strong>Home</strong></a>
+                <a href="{{route('admin.dashboard')}}" class="nav-link"> <strong>Home</strong></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link"><strong>Foramtions</strong></a>
-            </li><li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link"><strong>Sessions</strong></a>
-            </li><li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link"><strong>Créneaux</strong></a>
-            </li> </li><li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link"><strong>Départements</strong></a>
-            </li> </li><li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link"><strong>Catégories</strong></a>
+                <a href="{{route('admin.formation.index')}}" class="nav-link"><strong>Foramtions</strong></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{route('admin.session.index')}}" class="nav-link"><strong>Sessions</strong></a>
+            </li>
+
+
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{route('admin.department.index')}}" class="nav-link"><strong>Départements</strong></a>
+            </li>
+
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{route('admin.category.index')}}" class="nav-link"><strong>Catégories</strong></a>
             </li>
         </ul>
 
@@ -260,7 +334,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link" style="color: black">
+                                <a href="{{route('admin.appel_sortant.create')}}" class="nav-link" style="color: black">
                                     <i class="fas fa-phone-alt"></i>
                                     <p>Créer Appel Sortant</p>
                                 </a>
@@ -289,26 +363,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                     </li>
                     <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active" style="background-color: #fd7e14 ; color: black">
-                        <i class="fas fa-users"></i>
-                        <p>
-                            Comptes
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active" style="color: black">
-                                <i class="fas fa-users"></i>
-                                <p>Liste des Comptes</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" style="color: black">
-                                <i class="fas fa-user"></i>
-                                <p>Créer Compte</p>
-                            </a>
-                    </ul>
+                        <a href="#" class="nav-link active" style="background-color: #fd7e14 ; color: black">
+                            <i class="fas fa-users"></i>
+                            <p>
+                                Contrats
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.contrat.index')}}" class="nav-link active" style="color: black">
+                                    <i class="fas fa-users"></i>
+                                    <p>Liste des Contrats</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.contrat.create')}}" class="nav-link" style="color: black">
+                                    <i class="fas fa-user"></i>
+                                    <p>Créer Contrat</p>
+                                </a>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -366,6 +440,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
+{{--<script src="{{asset('//code.jquery.com/jquery-2.2.1.min.js')}}"></script>--}}
+{{--<script src="{{asset('//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/fontawesome-iconpicker.js')}}"></script>--}}
+{{--<script type="text/javascript">--}}
+{{--    $('.social-icon').iconpicker();--}}
+{{--</script>--}}
 
 <!-- jQuery -->
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
@@ -1809,13 +1889,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#dynamic_field').append('<tr id="row' + i + '" class="dynamic-added"><td><div class="form-group">\n' +
                 '                                <label>jour</label>\n' +
                 '                                <select class="form-control select2" style="width: 100%;" name="jour[]">\n' +
-                '                                    <option selected="selected">Dimanche</option>\n' +
-                '                                    <option>Lundi</option>\n' +
-                '                                    <option>Mardi</option>\n' +
-                '                                    <option>Mercredi</option>\n' +
-                '                                    <option>Jeudi</option>\n' +
-                '                                    <option>Vendredi</option>\n' +
-                '                                    <option>Samedi</option>\n' +
+                '                                    <option selected="selected" value="Sunday">Dimanche</option>\n' +
+                '                                    <option value="Monday">Lundi</option>\n' +
+                '                                    <option value="Tuesday">Mardi</option>\n' +
+                '                                    <option value="Wednesday">Mercredi</option>\n' +
+                '                                    <option value="Thursday">Jeudi</option>\n' +
+                '                                    <option value="Friday">Vendredi</option>\n' +
+                '                                    <option value="Saturday">Samedi</option>\n' +
                 '                                </select>\n' +
                 '                            </div>\n' +
                 '                                            <div class="form-group">\n' +
@@ -1885,6 +1965,199 @@ scratch. This page gets rid of all links and provides the needed markup only.
             });
         }
     });
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="{{asset('dist/js/bootstrap-iconpicker.bundle.min.js')}}"></script>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        $('#convert_example_1').iconpicker({
+            arrowClass: 'btn-danger',
+            arrowPrevIconClass: 'fas fa-angle-left',
+            arrowNextIconClass: 'fas fa-angle-right',
+            cols: 10,
+            footer: true,
+            header: true,
+            icon: 'fas fa-bomb',
+            iconset: 'fontawesome5',
+            labelHeader: '{0} of {1} pages',
+            labelFooter: '{0} - {1} of {2} icons',
+            placement: 'bottom',
+            rows: 5,
+            search: true,
+            searchText: 'Search',
+            selectedClass: 'btn-success',
+            unselectedClass: ''
+        });
+
+        $('#convert_example_2').iconpicker().on('change', function(e) {
+            $("#console").prepend(e.icon+'</br>');
+        });
+
+        $('#convert_example_3')
+            .iconpicker()
+            .iconpicker('setAlign', 'center')
+            .iconpicker('setArrowClass', 'btn-success')
+            .iconpicker('setArrowPrevIconClass', 'fas fa-angle-left')
+            .iconpicker('setArrowNextIconClass', 'fas fa-angle-right')
+            .iconpicker('setCols', 9)
+            .iconpicker('setFooter', true)
+            .iconpicker('setHeader', true)
+            .iconpicker('setIconset', {
+                iconClass: 'fas',
+                iconClassFix: 'fa-',
+                icons: [
+                    'fast-backward',
+                    'step-backward',
+                    'backward',
+                    'play',
+                    'pause',
+                    'stop',
+                    'forward',
+                    'step-forward',
+                    'fast-forward',
+                ],
+            })
+            .iconpicker('setIcon', 'fa-pause')
+            .iconpicker('setLabelHeader', '{0} of {1} pages')
+            .iconpicker('setLabelFooter', '{0} - {1} of {2} icons')
+            .iconpicker('setPlacement', 'bottom')
+            .iconpicker('setRows', 0)
+            .iconpicker('setSearch', true)
+            .iconpicker('setSearchText', 'Type text')
+            .iconpicker('setSelectedClass', 'btn-danger')
+            .iconpicker('setUnselectedClass', 'btn-primary');
+
+    });
+
+</script>
+
+<!-- Button Builder Example -->
+<script type="text/javascript">
+
+    $(function(){
+        var show_result = function(){
+            $('#result').text($('#button').html().trim());
+        };
+
+        show_result();
+
+        $('#btn-text').on('focusout', function(e) {
+            $('#btn-icon-positions button[value="' + $('#button').data('position') + '"]').trigger('click')
+            show_result();
+        });
+
+        $('#btn-colors button').on('click', function(e) {
+            $('#button a').removeClass('btn-primary btn-secondary btn-success btn-danger btn-warning btn-info btn-light btn-dark btn-link').addClass($(this).val());
+            show_result();
+        });
+
+        $('#btn-sizes button').on('click', function(e) {
+            $('#button a').removeClass('btn-sm btn-lg').addClass($(this).val());
+            show_result();
+        });
+
+        $('#btn-sizes a').on('click', function(e) {
+            $('#button a').toggleClass('btn-block');
+            show_result();
+        });
+
+        $('#btn-icon').iconpicker({
+            rows: 5,
+            cols: 10,
+            align: 'left'
+        });
+
+        $('#btn-icon').on('change', function(e) {
+            $('#button a > i').attr('class', '').addClass(e.icon);
+            $('#test p > i').attr('class', '').addClass(e.icon);
+            show_result();
+        });
+
+        $('#btn-icon-positions button').on('click', function(e) {
+            var icon = $('#button a > i');
+            var text = $('#btn-text').val();
+            $('#button a').empty();
+            if($(this).val() == 'left'){
+                $('#button a').append(icon).append(' ' + text);
+            }
+            else{
+                $('#button a').append(text + ' ').append(icon);
+                $('#test p').append(text + ' ').append(icon);
+            }
+            $('#button').data('position', $(this).val());
+            show_result();
+        });
+    });
+
+</script>
+
+<script type="text/javascript">
+
+    $(function(){
+        $('#btnDonate').bind('click', function(e){
+            e.preventDefault();
+            $('#formDonate').submit();
+        });
+
+        $.getJSON( "https://api.github.com/repos/victor-valencia/bootstrap-iconpicker", function( data ) {
+            $('#btnStars').html(data.stargazers_count);
+            $('#btnForks').html(data.forks_count);
+        });
+
+        $.getJSON( "https://api.github.com/repos/victor-valencia/bootstrap-iconpicker/tags", function( data ) {
+            $('#btnReleases').html(data.length);
+
+            var url = "https://github.com/victor-valencia/bootstrap-iconpicker/archive/" + data[0].name;
+
+            $('#btnGithub').html($('#btnGithub').html().replace('{0}', data[0].name));
+
+            $('#btnDownloadZip').attr('href', url + '.zip');
+            $('#btnDownloadZip').html($('#btnDownloadZip').html().replace('{0}', data[0].name));
+
+            $('#btnDownloadTar').attr('href', url + '.tar.gz');
+            $('#btnDownloadTar').html($('#btnDownloadTar').html().replace('{0}', data[0].name));
+        });
+
+        $.getJSON( "https://api.github.com/repos/victor-valencia/bootstrap-iconpicker/contributors", function( data ) {
+            $('#btnContributors').html(data.length);
+        });
+
+        $('[role="menu"] a').on('click', function(){
+            $("#tabConfig").html($(this).html() + ' <span class="caret"></span>');
+        });
+    });
+</script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-38890641-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 </script>
 </body>
 </html>
