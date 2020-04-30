@@ -27,7 +27,7 @@
 
                             <strong><i class="fas fa-layer-group"></i> tarif </strong>
 
-                                <p class="text-muted">  {{$inscription->TarifF}} </p>
+                            <p class="text-muted">  {{$inscription->TarifF}} </p>
 
                         </div>
                         <!-- /.card-body -->
@@ -36,7 +36,7 @@
                 </div>
                 <!-- /.col -->
                 <script>
-i = 0 ;
+                    i = 1;
                     document.write("                <div class=\"col-md-9\">\n" +
                         "                    <div class=\"card\">\n" +
                         "                        <div class=\"card-header p-2\">\n" +
@@ -44,41 +44,41 @@ i = 0 ;
 
                     {{--for (i =  0 ; i<{{count($appels)}}; i++){--}}
                     @foreach($appels as $a )
-                        document.write("<li class=\"nav-item\"><a class=\"nav-link\" href=\"#activity"+i+"\" data-toggle=\"tab\">"+i+"</a>");
+                    document.write("<li class=\"nav-item\"><a class=\"nav-link\" href=\"#activity" + i + "\" data-toggle=\"tab\">" + i + "</a>");
 
                     // }
-i++;
-@endforeach
+                    i++;
+                    @endforeach
                     document.write("  </ul>\n" +
                         "                        </div><!-- /.card-header -->\n" +
                         "                        <div class=\"card-body\">\n" +
                         "                            <div class=\"tab-content\">");
                     {{--for (i =  0 ; i<{{count($appels)}}; i++){--}}
-                        d=0;
+                        d = 0;
                     @foreach($appels as $e )
 
-                        document.write("\n" +
-                            "                                <div class=\" tab-pane\" id=\"activity"+d+"\">\n" +
-                            "                                    <!-- Post -->\n" +
-                            "                                    <strong><i class=\"fas fa-bullseye\"></i> subject"+d+" </strong>\n" +
-                            "\n" +
-                            "                                    <p class=\"text-muted\">\n" +
-                            "                                                                           {{$e->subject}}\n" +
-                            "                                    </p>\n" +
-                            "                                    <hr>\n" +
-                            "\n" +
-                            "                                    <!-- Post -->\n" +
-                            "                                    <strong><i class=\"fas fa-toolbox\"></i> corp"+d+" </strong>\n" +
-                            "\n" +
-                            "                                    <p class=\"text-muted\">\n" +
-                            "                                                                             {{$e->corp}}\n" +
-                            "                                    </p>\n" +
-                            "                                    <hr>\n" +
+                    document.write("\n" +
+                        "                                <div class=\" tab-pane\" id=\"activity" + d + "\">\n" +
+                        "                                    <!-- Post -->\n" +
+                        "                                    <strong><i class=\"fas fa-bullseye\"></i> subject" + d + " </strong>\n" +
+                        "\n" +
+                        "                                    <p class=\"text-muted\">\n" +
+                        "                                                                           {{$e->subject}}\n" +
+                        "                                    </p>\n" +
+                        "                                    <hr>\n" +
+                        "\n" +
+                        "                                    <!-- Post -->\n" +
+                        "                                    <strong><i class=\"fas fa-toolbox\"></i> corp" + d + " </strong>\n" +
+                        "\n" +
+                        "                                    <p class=\"text-muted\">\n" +
+                        "                                                                             {{$e->corp}}\n" +
+                        "                                    </p>\n" +
+                        "                                    <hr>\n" +
 
 
-                            "                                </div>");
+                        "                                </div>");
                     // }
-d++;
+                    d++;
                     @endforeach
                     document.write("           </div>\n" +
                         "                            <!-- /.tab-content -->\n" +
@@ -97,8 +97,6 @@ d++;
 
 
                 </script>
-
-
 
 
             </div>

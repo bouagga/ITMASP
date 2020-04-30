@@ -30,7 +30,7 @@ class AppelSortantController extends Controller
     public function create(Request $request)
     {
         $key = $request->get('id');
-        dd($key);
+//        dd($key);
 //        $key= 0;
 //        dd($key);
         $ins=Preinscription::find($request->get('id'));

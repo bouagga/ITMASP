@@ -21,24 +21,14 @@
                             <i class="fas fa-edit" style="margin-left: 40%;"></i>
                         </a>
                     </td>
-@if( $c->designation =="not")
-
-                        <td>
-
-                                <i class="fas fa-archive" style="margin-left: 40%;"></i>
-
-                        </td>
-    @else
-
                     <td>
-                        <form role="form" method="post" action="{{route('admin.category.destroy',$c->id_category)}}">
+                        <form role="form" method="post"
+                              action="{{route('admin.category.destroy',$c->id_category)}}">
                             @method('DELETE')
                             @csrf
                             <button class="fas fa-archive" style="margin-left: 40%;"></button>
                         </form>
                     </td>
-@endif
-
                 </tr>
             @endforeach
 
@@ -48,10 +38,8 @@
         <br>
         <div class="row">
             <div class="col-12">
-                <a href="{{route('admin.category.create')}}" >
-
-                    <input type="submit" value="Créer Category"
-                           class="btn btn-success float-right">
+                <a href="{{route('admin.category.create')}}">
+                    <input type="submit" value="Créer Category" class="btn btn-success float-right">
                 </a>
             </div>
         </div>

@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card card-secondary">
-                        <div class="card-header" style="color: ;background-color: #fd7e14;">
+                        <div class="card-header" style="background-color: #fd7e14;">
                             <h3 class="card-title">Session</h3>
 
                             <div class="card-tools">
@@ -32,7 +32,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="date_lancement" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                    <input type="date" class="form-control" name="date_lancement" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -58,7 +58,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control"  name="date_debut_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                    <input type="date" class="form-control"  name="date_debut_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -69,7 +69,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="date_fin_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                    <input type="date" class="form-control" name="date_fin_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -142,7 +142,7 @@
             <div class="row">
                 <div class="col-12">
                     <a href="#" class="btn btn-secondary">Cancel</a>
-                    <input type="submit" value="Create new formation" class="btn btn-success float-right">
+                    <input type="submit" value="Create new Session" class="btn btn-success float-right">
                 </div>
             </div>
         </form>

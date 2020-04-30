@@ -22,7 +22,24 @@ class ContratController extends Controller
      */
     public function index()
     {
-        return view('admin.contrat.index')->with('contrats',Contrat::all());
+        $max = 0;
+        $min = 0;
+        $cc = [];
+        $contrats=Contrat::all();
+//        dd($contrats->TarifF);
+//      foreach ($contrats as $c ){
+//          if (  $c->TarifF>=$max ){
+//              $max = $c->TarifF;
+//              $cc[]=$max;
+//          }else if(){
+//
+//          }
+//
+//          $max = $c->TarifF;
+//          $min = $c->TarifF;
+//
+//      }
+        return view('admin.contrat.index')->with('contrats',$contrats);
     }
 
     /**

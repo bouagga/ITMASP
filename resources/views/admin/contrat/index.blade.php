@@ -7,6 +7,7 @@
             <thead>
             <tr>
                 <th>#</th>
+                <th>clinet</th>
                 <th>formation</th>
                 <th>session</th>
                 <th>Prix calculé</th>
@@ -18,6 +19,9 @@
             @foreach($contrats as $c )
                 <tr>
                     <td>{{$c->id_contrat}}</td>
+                    @foreach($c->client()->get() as $cl)
+                        <td>{{$cl->nom}} {{$cl->prenom}}</td>
+                    @endforeach
 
                     @foreach($c->session()->get() as $s)
                         @foreach($s->formation()->get() as $ff)

@@ -12,6 +12,7 @@ class CategoryController extends Controller
     {
         $this->middleware('auth:admin');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +20,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.index')->with('category',Category::all());
+        return view('admin.category.index')->with('category', Category::all());
     }
 
     /**
@@ -35,13 +36,13 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,Category $category)
+    public function store(Request $request, Category $category)
     {
-        $category->description=$request->description;
-        $category->designation=$request->designation;
+        $category->description = $request->description;
+        $category->designation = $request->designation;
         $category->save();
         return redirect('admin/category');
     }
@@ -49,37 +50,37 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
     {
-        return view('admin.category.show')->with('category',$category)->with('formation',$category->formations()->get());
+        return view('admin.category.show')->with('category', $category)->with('formation', $category->formations()->get());
 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
     public function edit(Category $category)
     {
-        return view('admin.category.edit')->with('category',$category);
+        return view('admin.category.edit')->with('category', $category);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
     {
-        $category->description=$request->description;
-        $category->designation=$request->designation;
+        $category->description = $request->description;
+        $category->designation = $request->designation;
         $category->save();
         return redirect('admin/category');
 
@@ -88,21 +89,16 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
     {
-        foreach ($category->formations()->get() as $formation){
-            $formation->id_category=null;
+        foreach ($category->formations()->get() as $formation) {
+            $formation->id_category = null;
             echo $formation;
-            $formation->category()->dissociate() ;
-
-//            $cat = Category::find(4);
-//            $formation->category()->associate($cat);
+            $formation->category()->dissociate();
             $formation->save();
-
-
         }
         $category->delete();
         return redirect('admin/category');

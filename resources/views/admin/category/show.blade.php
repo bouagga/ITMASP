@@ -111,7 +111,7 @@
                                 </a>
                             @else
                                 <a href="{{route('admin.category.edit',$category->id_category)}}">
-                                    <input type="submit" value="edit department"
+                                    <input type="submit" value="edit Category"
                                            class="btn btn-success float-right">
                                 </a>
                         @endif

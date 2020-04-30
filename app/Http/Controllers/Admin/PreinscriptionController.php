@@ -317,11 +317,11 @@ class PreinscriptionController extends Controller
 
         $is= Preinscription::find($inscription->id_preinscription);
 
-//        dd($inscription->appelsortants()->get());
-        foreach ($inscription->appelsortants()->get() as $app){
-       echo $app;
-
-        }
+    ////        dd($inscription->appelsortants()->get());
+    //        foreach ($inscription->appelsortants()->get() as $app){
+    ////       echo $app;
+    //
+    //        }
 
         return view('admin.inscription.show')->with('inscription',$inscription)->with('id',$inscription->id_preinscription)->with('appels',$inscription->appelsortants()->get());
     }

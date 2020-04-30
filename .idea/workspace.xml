@@ -2,93 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7167bf6c-c347-48cf-9791-1c56b36a5d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/AppelSortant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Contrat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AppelSortantController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ContratController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Paiement.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_222113_create_appel_sortants_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_20_213139_create_contrats_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_20_213217_create_paiements_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/docs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/fontawesome-iconpicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/fontawesome-iconpicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/pygments-manni.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/css/bootstrap-iconpicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/css/bootstrap-iconpicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/js/bootstrap-iconpicker-iconset-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/js/bootstrap-iconpicker-iconset-all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/js/bootstrap-iconpicker.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/js/bootstrap-iconpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/js/bootstrap-iconpicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/elusive-icons-2.0.0/css/elusive-icons.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/elusive-icons-2.0.0/fonts/Elusive-Icons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/elusive-icons-2.0.0/fonts/Elusive-Icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/elusive-icons-2.0.0/fonts/Elusive-Icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/elusive-icons-2.0.0/fonts/Elusive-Icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/map-icons-2.1.0/css/map-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/map-icons-2.1.0/css/map-icons.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/map-icons-2.1.0/fonts/map-icons.dev.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/map-icons-2.1.0/fonts/map-icons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/map-icons-2.1.0/fonts/map-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/map-icons-2.1.0/fonts/map-icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-fonts/map-icons-2.1.0/fonts/map-icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/fontawesome-iconpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/fontawesome-iconpicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/css/bootstrap-iconpicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/bootstrap-iconpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-elusiveicon-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-flagicon-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-fontawesome-4-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-fontawesome-5-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-glyphicon-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-ionicon-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-mapicon-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-materialdesign-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-octicon-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-typicon-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/src/js/iconset/iconset-weathericon-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/appel_sortant/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/appel_sortant/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/contrat/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/contrat/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/department/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/department/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/department/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/department/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/inscription/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AppelSortantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AppelSortantController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartemntController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartemntController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ContratController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ContratController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FormationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PreinscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PreinscriptionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Preinscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Preinscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_01_153942_create_formations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_153942_create_formations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_01_163251_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_01_163251_create_sessions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_08_194312_create_creneaus_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_08_194312_create_creneaus_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_12_202512_create_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_12_202512_create_clients_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_12_203125_create_preinscriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_12_203125_create_preinscriptions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/formation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formation/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/formation/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/formation/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/contrat/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contrat/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/department/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/department/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/inscription/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inscription/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/inscription/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inscription/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/inscription/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/inscription/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/session/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/session/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/session/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/session/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,6 +288,18 @@
       <workItem from="1584804443293" duration="20317000" />
       <workItem from="1585241968621" duration="5137000" />
       <workItem from="1585247788209" duration="2518000" />
+      <workItem from="1586246826100" duration="30000" />
+      <workItem from="1586246915803" duration="7423000" />
+      <workItem from="1587054069876" duration="624000" />
+      <workItem from="1587062794706" duration="242000" />
+      <workItem from="1587213860595" duration="193000" />
+      <workItem from="1587238880711" duration="2084000" />
+      <workItem from="1587247296973" duration="613000" />
+      <workItem from="1587327696932" duration="930000" />
+      <workItem from="1587338604692" duration="1497000" />
+      <workItem from="1587683380632" duration="605000" />
+      <workItem from="1588034420110" duration="1264000" />
+      <workItem from="1588198576148" duration="6177000" />
     </task>
     <servers />
   </component>
@@ -382,29 +323,29 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1918" y="180" key="#Updates" timestamp="1577984186986">
-      <screen x="1366" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1918" y="180" key="#Updates/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577984186986" />
     <state x="730" y="310" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583941117736">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="730" y="310" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583941117736" />
-    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585247742751">
+    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586246852215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="2006" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577984188706" />
     <state x="455" y="174" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1581236528227" />
-    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585247742751" />
+    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586246852215" />
+    <state x="488" y="339" width="943" height="361" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1587338642196">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="488" y="339" width="943" height="361" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587338642196" />
     <state x="580" y="171" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584826890375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578904449600" />
     <state x="580" y="171" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584826890375" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1581243129320">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="651" y="171" key="FileChooserDialogImpl" timestamp="1587329144036">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581243129320" />
+    <state x="651" y="171" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587329144036" />
     <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1582494335337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -428,14 +369,11 @@
     <state x="540" y="256" key="IDE.errors.dialog" timestamp="1584808981275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="384" y="179" key="IDE.errors.dialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1578600902090" />
-    <state x="1906" y="256" key="IDE.errors.dialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1578232528572" />
     <state x="384" y="179" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1578919115541" />
     <state x="540" y="256" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584808981275" />
     <state x="461" y="21" key="SettingsEditor" timestamp="1582649016230">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1827" y="163" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1577825718265" />
     <state x="328" y="15" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581233010752" />
     <state x="461" y="21" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582649016230" />
     <state width="560" height="446" key="SwitcherDM" timestamp="1582452287692">
@@ -453,19 +391,14 @@
     </state>
     <state x="438" y="209" key="cloudConfig.SelfSettingsDialog/0.0.1366.728@0.0.1366.728" timestamp="1581232954725" />
     <state x="616" y="299" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584215627721" />
-    <state x="0" y="0" width="882" height="1040" key="find.popup" timestamp="1584381844722">
+    <state x="0" y="0" width="882" height="1040" key="find.popup" timestamp="1587339294128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" width="627" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1578651705912" />
-    <state x="0" y="0" width="882" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584381844722" />
+    <state x="0" y="0" width="882" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587339294128" />
     <state x="476" y="231" key="run.anything.popup" timestamp="1584807882647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1581104982606" />
     <state x="476" y="231" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584807882647" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578409817609">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578409817609" />
   </component>
 </project>

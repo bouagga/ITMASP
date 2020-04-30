@@ -411,6 +411,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.content-header -->
         <!-- Main content -->
+
+
     @yield('content')
 
     <!-- /.content -->
@@ -489,8 +491,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- bs-custom-file-input -->
 <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <!-- DataTables -->
-<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}" defer></script>
+<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}" defer></script>
 <!-- jsGrid -->
 <script src="{{asset('plugins/jsgrid/demos/db.js')}}"></script>
 <script src="{{asset('plugins/jsgrid/jsgrid.min.js')}}}"></script>
@@ -1705,7 +1707,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         //Datemask2 mm/dd/yyyy
         $('#datemask2').inputmask('dd-mm-yyyy', { 'placeholder': 'dd-mm-yyyy' })
         //Money Euro
-        $('[data-mask]').inputmask()
+        $('[data-mask]').inputmask();
 
         //Date range picker
         $('#reservation').daterangepicker()
@@ -1753,7 +1755,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         })
     $('#timepicker2').datetimepicker({
             format: 'LT'
-        })
+        });
 
         //Bootstrap Duallistbox
         $('.duallistbox').bootstrapDualListbox()
@@ -1774,6 +1776,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     })
 </script>
 <!-- page data script -->
+<script src="{{asset('js/jQuery.js')}}"></script>
+
 <script>
     $(function () {
         $("#example1").DataTable();
@@ -1908,7 +1912,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 '                                            </div></td></tr><input type="hidden" name="row' + i + '" value ="">');
             $('#dynamic_field2').append('<option id="op'+co+'" value="' +co+ '">' + co + '</option>');
 
-            window.alert(i);
+
 
         });
         $('#add2').click(function () {
