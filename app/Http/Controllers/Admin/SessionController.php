@@ -64,6 +64,13 @@ class SessionController extends Controller
      */
     public function store(Request $request,Session $session)
     {
+        $request->validate( [
+            'date_lancement'   => 'required',
+            'date_debut_p' => 'required',
+            'date_fin_p' => 'required',
+            'pourcentage_p' => 'required',
+            'formation' => 'required'
+          ]);
         $d=$request->date_lancement;
         $d= new DateTime($d);
         $session->date_lancement=$d;

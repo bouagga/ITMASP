@@ -10,23 +10,48 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="inputName">Code de formation</label>
-                            <input type="text" id="code" name="code" class="form-control">
+                            <input type="text" id="code" name="code" class="form-control @error('code') is-invalid @enderror">
+                            @error('code')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputName">Intitulé de formation</label>
-                            <input type="text" id="Intitule" name="Intitule" class="form-control">
+                            <input type="text" id="Intitule" name="Intitule" class="form-control  @error('Intitule') is-invalid @enderror">
+                            @error('Intitule')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Objectifs</label>
-                            <textarea id="inputDescription" name="objectif" class="form-control" rows="4"></textarea>
+                            <textarea id="inputDescription" name="objectif" class="form-control  @error('objectif') is-invalid @enderror" rows="4"></textarea>
+                            @error('objectif')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Prérequis</label>
-                            <textarea id="inputDescription" name="prerequis" class="form-control" rows="4"></textarea>
+                            <textarea id="inputDescription" name="prerequis" class="form-control @error('prerequis') is-invalid @enderror" rows="4"></textarea>
+                            @error('prerequis')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Programme global</label>
-                            <textarea id="inputDescription" name="program" class="form-control" rows="4"></textarea>
+                            <textarea id="inputDescription" name="program" class="form-control  @error('program') is-invalid @enderror" rows="4"></textarea>
+                            @error('program')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
 
                     </div>
@@ -37,18 +62,28 @@
             <div class="col-md-6">
                 <div class="card card-secondary">
                     <div class="card-body">
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label for="inputName">Durée</label>
-                            <input type="number" id="duree" name="duree" class="form-control">
+                            <input type="number" id="duree" name="duree" class="form-control @error('duree') is-invalid @enderror">
+                            @error('duree')
+                                 <span class="invalid-feedback">
+                                        {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Modalité de paiement</label>
-                            <textarea id="inputDescription" name="payment" class="form-control" rows="4"></textarea>
+                            <textarea id="inputDescription" name="payment" class="form-control @error('payment') is-invalid @enderror" rows="4"></textarea>
+                            @error('payment')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputEstimatedBudget">Prix de formation</label>
                             <div class="input-group">
-                            <input type="number" id="inputEstimatedBudget" name="prix" class="form-control">
+                            <input type="number" id="inputEstimatedBudget" name="prix" class="form-control @error('prix') is-invalid @enderror">
                             <div class="input-group-append">
                                 <span class="input-group-text">.00</span>
                             </div>
@@ -56,26 +91,40 @@
                                 <span class="input-group-text">DA</span>
                             </div>
                             </div>
+                            @error('prix')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputStatus">Department</label>
-                            <select class="form-control custom-select" name="department">
+                            <select class="form-control custom-select @error('department') is-invalid @enderror" name="department">
                                 <option selected disabled>Select one</option>
                                 @foreach($deps as $d)
                                     <option value="{{$d->id_department}}">{{$d->nom}}</option>
                                 @endforeach
                             </select>
+                            @error('department')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputStatus">Category</label>
-                            <select class="form-control custom-select" name="category">
+                            <select class="form-control custom-select @error('category') is-invalid @enderror" name="category">
                                 <option selected disabled>Select one</option>
                                 @foreach($cats as $c)
                                     <option value="{{$c->id_category}}">{{$c->designation}}</option>
                                 @endforeach
                             </select>
+                            @error('category')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                            @enderror
                         </div>
-
                     </div>
                     <!-- /.card-body -->
                 </div>

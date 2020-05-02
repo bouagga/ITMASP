@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-
+use Validator;
 class FormationController extends Controller
 {
     public function __construct()
@@ -51,8 +51,20 @@ class FormationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Formation $formation)
-    {
-
+    {   
+       
+        $request->validate( [
+            'code'   => 'required',
+            'Intitule' => 'required',
+            'duree' => 'required',
+            'objectif' => 'required',
+            'prerequis' => 'required',
+            'program' => 'required',
+            'payment' => 'required',
+            'prix' => 'required',
+            'category' => 'required',
+            'department' => 'required'
+          ]);
         $formation->code = $request->code;
         $formation->Intitule = $request->Intitule;
         $formation->duree = $request->duree;
@@ -72,10 +84,7 @@ class FormationController extends Controller
         $formation->admin()->associate($adm);
         $formation->save();
         return redirect('admin/formation');
-
-
     }
-
     /**
      * Display the specified resource.
      *
@@ -84,8 +93,6 @@ class FormationController extends Controller
      */
     public function show(Formation $formation)
     {
-//        echo $formation;
-//        dd(count($formation->category()->get()) );
         return view('admin.formation.show')->with('formation', $formation);
     }
 
@@ -110,7 +117,19 @@ class FormationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Formation $formation)
-    {
+    { 
+        $request->validate( [
+            'code'   => 'required',
+            'Intitule' => 'required',
+            'duree' => 'required',
+            'objectif' => 'required',
+            'prerequis' => 'required',
+            'program' => 'required',
+            'payment' => 'required',
+            'prix' => 'required',
+            'category' => 'required',
+            'department' => 'required'
+          ]);
         $formation->code = $request->code;
         $formation->Intitule = $request->Intitule;
         $formation->duree = $request->duree;

@@ -18,12 +18,17 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputStatus">Formation</label>
-                                <select class="form-control custom-select" name="formation">
+                                <select class="form-control custom-select @error('formation') is-invalid @enderror" name="formation">
                                     <option selected disabled>Select one</option>
                                     @foreach($formations as $f)
                                         <option value="{{$f->id_formation}}">{{$f->Intitule}}</option>
                                     @endforeach
                                 </select>
+                                @error('formation')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Date de lancement</label>
@@ -32,7 +37,12 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="date" class="form-control" name="date_lancement" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                    <input type="date" class="form-control @error('date_lancement') is-invalid @enderror" name="date_lancement" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                @error('date_lancement')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                @enderror
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -58,7 +68,12 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="date" class="form-control"  name="date_debut_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                    <input type="date" class="form-control @error('date_debut_p') is-invalid @enderror"  name="date_debut_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                @error('date_debut_p')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                @enderror
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -69,17 +84,27 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="date" class="form-control" name="date_fin_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                    <input type="date" class="form-control @error('date_fin_p') is-invalid @enderror" name="date_fin_p" data-inputmask-alias="datetime" data-inputmask-inputformat="dd-mm-yyyy" data-mask>
+                                @error('date_fin_p')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                @enderror
                                 </div>
                                 <!-- /.input group -->
                             </div>
                             <div class="form-group">
                                 <label for="inputEstimatedBudget">Pourcentage</label>
                                 <div class="input-group">
-                                    <input type="number" id="inputEstimatedBudget" name="pourcentage_p" class="form-control">
+                                    <input type="number" id="inputEstimatedBudget" name="pourcentage_p" class="form-control @error('pourcentage_p') is-invalid @enderror">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">%</span>
-                                    </div>
+                                   </div>
+                                   @error('pourcentage_p')
+                                 <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                @enderror
                                 </div>
                             </div>
                         </div>

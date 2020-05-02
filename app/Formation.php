@@ -3,11 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Formation extends Model
-{
+{ 
+    use SoftDeletes;
     protected $primaryKey = 'id_formation';
-
+    
     public function admin(){
         return $this->belongsTo(Admin::class,'id_admin');
     }
